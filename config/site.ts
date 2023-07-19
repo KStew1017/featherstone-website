@@ -1,69 +1,57 @@
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-	name: "Next.js + NextUI",
-	description: "Make beautiful websites regardless of your design experience.",
-	navItems: [
-		{
-			label: "Home",
-			href: "/",
-		},
+    name: "Featherstone Business Park",
+    description: "Versatile commercial spaces tailored to fit your needs in secure and accessible warehouses.",
+    navItems: [
     {
-      label: "Docs",
-      href: "/docs",
+        label: "Home",
+        href: "/",
     },
     {
-      label: "Pricing",
-      href: "/pricing",
+        label: "Units",
+        href: "/units",
     },
     {
-      label: "Blog",
-      href: "/blog",
+        label: "Location",
+        href: "/location",
     },
     {
-      label: "About",
-      href: "/about",
+        label: "Community",
+        href: "/community",
+    },
+    {
+        label: "Contact",
+        href: "/contact",
     }
-	],
-	navMenuItems: [
-		{
-			label: "Profile",
-			href: "/profile",
-		},
-		{
-			label: "Dashboard",
-			href: "/dashboard",
-		},
-		{
-			label: "Projects",
-			href: "/projects",
-		},
-		{
-			label: "Team",
-			href: "/team",
-		},
-		{
-			label: "Calendar",
-			href: "/calendar",
-		},
-		{
-			label: "Settings",
-			href: "/settings",
-		},
-		{
-			label: "Help & Feedback",
-			href: "/help-feedback",
-		},
-		{
-			label: "Logout",
-			href: "/logout",
-		},
-	],
-	links: {
-		github: "https://github.com/nextui-org/nextui",
-		twitter: "https://twitter.com/getnextui",
-		docs: "https://nextui-docs-v2.vercel.app",
-		discord: "https://discord.gg/9b6yyZKmH4",
-    sponsor: "https://patreon.com/jrgarciadev"
-	},
+    ],
+    navMenuItems: [
+        {
+            label: "Home",
+            href: "/home",
+        },
+        {
+            label: "Units",
+            href: "/units",
+        },
+        {
+            label: "Location",
+            href: "/location",
+        },
+        {
+            label: "Community",
+            href: "/community",
+        },
+        {
+            label: "Contact",
+            href: "/contact",
+        }
+    ],
+    links: {
+        github: "https://github.com/nextui-org/nextui",
+        twitter: "https://twitter.com/getnextui",
+        docs: "https://nextui-docs-v2.vercel.app",
+        discord: "https://discord.gg/9b6yyZKmH4",
+        sponsor: "https://patreon.com/jrgarciadev"
+    }
 };

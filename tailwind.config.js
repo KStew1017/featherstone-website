@@ -9,7 +9,19 @@ module.exports = {
     './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}'
   ],
   theme: {
-    extend: {},
+    extend: {
+        colors: {
+            'dark-grey': '#455353',
+            'light': '#E4E3DD'
+        }
+    },
+    fontFamily: {
+        'ptserif': 'PT Serif, serif',
+        'jost': 'Jost, sans-serif',
+        'montserrat': 'Montserrat, sans-serif',
+        'inter': 'Inter, sans-serif',
+        'poppins': 'Poppins, sans-serif',
+    }
   },
   darkMode: "class",
   plugins: [nextui()],

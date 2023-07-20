@@ -1,11 +1,10 @@
 import "@/styles/globals.css";
 import { Metadata } from "next";
 import { siteConfig } from "@/config/site";
-import { fontSans } from "@/config/fonts";
 import { Providers } from "./providers";
 import { Navbar } from "@/components/navbar";
-import { Link } from "@nextui-org/link";
-import clsx from "clsx";
+import localFont from '@next/font/local'
+
 
 export const metadata: Metadata = {
     title: {
@@ -24,24 +23,47 @@ export const metadata: Metadata = {
     },
 };
 
+const jost = localFont({
+    src: [
+        {
+            path: "../public/fonts/Jost-Regular.ttf",
+            weight: "normal",
+        },
+        {
+            path: "../public/fonts/Jost-Bold.ttf",
+            weight: "bold",
+        }
+    ],
+    variable:  '--font-jost'
+})
+
+const ptserif = localFont({
+    src: [
+        {
+            path: "../public/fonts/PTSerif-Regular.ttf",
+            weight: "normal",
+        },
+        {
+            path: "../public/fonts/PTSerif-Bold.ttf",
+            weight: "bold",
+        }
+    ],
+    variable:  '--font-ptserif'
+})
+
 export default function RootLayout({
     children,
 }: {
     children: React.ReactNode;
 }) {
     return (
-        <html lang="en" suppressHydrationWarning>
+        <html lang="en" className={`${jost.variable} ${ptserif.variable} font-sans bg-light`}>
             <head />
-            <body
-                className={clsx(
-                    "min-h-screen bg-light font-sans antialiased",
-                    fontSans.variable
-                )}
-            >
+            <body>
                 <Providers>
                     <div className="relative flex flex-col h-screen">
-                        <Navbar />
-                        <main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow">
+                        <main>
+                            <Navbar />
                             {children}
                         </main>
                     </div>

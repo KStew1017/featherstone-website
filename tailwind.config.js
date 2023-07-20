@@ -13,14 +13,17 @@ module.exports = {
         colors: {
             'dark-grey': '#455353',
             'light': '#E4E3DD'
+        },
+        transitionTimingFunction: {
+            's-curve': 'cubic-bezier(0.075, 0.82, 0.165, 1)'
+        },
+        dropShadow: {
+            'light': '0px 0px 10px rgba(255, 255, 255, 0.25)'
         }
     },
     fontFamily: {
-        'ptserif': 'PT Serif, serif',
-        'jost': 'Jost, sans-serif',
-        'montserrat': 'Montserrat, sans-serif',
-        'inter': 'Inter, sans-serif',
-        'poppins': 'Poppins, sans-serif',
+        sans: ['var(--font-jost)'],
+        serif: ['var(--font-ptserif)'],
     }
   },
   darkMode: "class",

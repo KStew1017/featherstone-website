@@ -12,20 +12,26 @@ const AboutUsContent: FC = () => {
     );
 };
 
-const AboutUsCard: FC = () => {
+type AboutUsCardProps = {
+  imageSrc: string;
+  imageAlt: string;
+  title: string;
+};
+
+const AboutUsCard: FC<AboutUsCardProps> = ({ imageSrc, imageAlt, title }) => {
     return(
         <div className="grid grid-cols-10 items-center">
             <div className="col-span-4 relative w-full h-[90%]">
                 <Image
-                    src="/temp-hero.jpg"
-                    alt="Warehouse Icon"
+                    src={imageSrc}
+                    alt={imageAlt}
                     layout="fill"
                     objectFit="cover"
                 />
             </div>
             <div className="col-start-6 col-span-5">
                 <InfoCard 
-                    title="About Us"
+                    title={title}
                     content={<AboutUsContent />}
                 />
             </div>

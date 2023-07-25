@@ -1,12 +1,12 @@
 'use client';
 
 import { Card, Text } from '@nextui-org/react';
-import { FC, ReactNode } from "react";
+import { FC, ReactComponentElement, ReactNode } from "react";
 
 
 interface Props {
     title: string;
-    content: ReactNode;
+    content: ReactComponentElement<FC> | ReactNode;
 }
 
 const InfoCard: FC<Props> = (props) => {

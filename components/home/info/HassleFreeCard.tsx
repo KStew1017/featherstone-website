@@ -12,19 +12,25 @@ const HassleFreeContent: FC = () => {
     );
 };
 
-const HassleFreeCard: FC = () => {
+type HassleFreeCardProps = {
+    imageSrc: string;
+    imageAlt: string;
+    title: string;
+};
+
+const HassleFreeCard: FC<HassleFreeCardProps> = ({ imageSrc, imageAlt, title }) => {
     return(
         <div className="grid grid-cols-10 items-center">
             <div className="col-span-5">
                 <InfoCard
-                    title="Hassle-Free Renting"
+                    title={title}
                     content={<HassleFreeContent />}
                 />
             </div>
             <div className="col-end-11 col-span-4 relative w-full h-[90%]">
                 <Image
-                    src="/temp-hero.jpg"
-                    alt="Warehouse Icon"
+                    src={imageSrc}
+                    alt={imageAlt}
                     layout="fill"
                     objectFit="cover"
                 />

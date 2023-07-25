@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import { siteConfig } from "@/config/site";
 import { Providers } from "./providers";
 import { Navbar } from "@/components/navbar";
-import localFont from "next/font/local"
+import localFont from "next/font/local";
 
 
 export const metadata: Metadata = {
@@ -35,7 +35,7 @@ const jost = localFont({
         }
     ],
     variable:  '--font-jost'
-})
+});
 
 const ptserif = localFont({
     src: [
@@ -49,7 +49,7 @@ const ptserif = localFont({
         }
     ],
     variable:  '--font-ptserif'
-})
+});
 
 export default function RootLayout({
     children,
@@ -71,4 +71,4 @@ export default function RootLayout({
             </body>
         </html>
     );
-}
+};

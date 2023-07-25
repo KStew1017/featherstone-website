@@ -3,11 +3,13 @@ import InfoSection from "@/components/home/info/InfoSection";
 import { siteConfig } from "@/config/site";
 
 
-export default function Home() {
+const Home = async () => {
     return (
         <>
             <Hero siteName={siteConfig.name} />
             <InfoSection />
         </>
     );
-}
+};
+
+export default Home;

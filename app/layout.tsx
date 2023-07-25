@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import { siteConfig } from "@/config/site";
 import { Providers } from "./providers";
 import { Navbar } from "@/components/navbar";
-import localFont from '@next/font/local'
+import localFont from "next/font/local"
 
 
 export const metadata: Metadata = {
@@ -57,7 +57,7 @@ export default function RootLayout({
     children: React.ReactNode;
 }) {
     return (
-        <html lang="en" className={`${jost.variable} ${ptserif.variable} font-sans bg-light`}>
+        <html lang="en" className={`${jost.variable} ${ptserif.variable} font-sans bg-tan-100`}>
             <head />
             <body>
                 <Providers>

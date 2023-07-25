@@ -1,15 +1,13 @@
-import Hero from "@/components/hero";
+import Hero from "@/components/home/hero/Hero";
+import InfoSection from "@/components/home/info/InfoSection";
+import { siteConfig } from "@/config/site";
 
 
 export default function Home() {
     return (
-        <section>
-            <section className="flex flex-col min-h-screen bg-[url(../public/temp-hero.jpg)] bg-center bg-cover bg-blend-overlay bg-black/20 bg-fixed">
-                <Hero />
-            </section>
-            <section className="flex flex-col min-h-screen ">
-                
-            </section>
-        </section>
+        <>
+            <Hero siteName={siteConfig.name} />
+            <InfoSection />
+        </>
     );
 }

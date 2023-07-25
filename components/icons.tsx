@@ -21,3 +21,13 @@ export const LogoStrokeIn: React.FC<IconSvgProps> = ({
         <Image src="/stroke-in.svg" alt="Featherstone Logo" width={500} height={500} />
     </>
 );
+
+export const Warehouse: React.FC<IconSvgProps> = ({
+    width,
+    height,
+    ...props
+}) => (
+    <>
+        <Image src="/warehouse.svg" alt="Warehouse Icon" width={90} height={90} />
+    </>
+);

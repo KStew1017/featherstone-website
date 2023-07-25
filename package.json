@@ -9,8 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@next/font": "^13.4.10",
     "@nextui-org/button": "^0.0.0-dev-v2-20230714000855",
+    "@nextui-org/card": "^0.0.0-dev-v2-20230326012034",
     "@nextui-org/code": "^0.0.0-dev-v2-20230714000855",
     "@nextui-org/input": "^0.0.0-dev-v2-20230714000855",
     "@nextui-org/kbd": "^0.0.0-dev-v2-20230714000855",
@@ -32,7 +32,7 @@
     "eslint-config-next": "13.4.4",
     "framer-motion": "^10.12.16",
     "intl-messageformat": "^10.1.0",
-    "next": "13.4.9",
+    "next": "^13.4.12",
     "next-themes": "^0.2.1",
     "postcss": "8.4.24",
     "react": "18.2.0",

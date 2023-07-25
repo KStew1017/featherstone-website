@@ -27,7 +27,7 @@ export const Navbar = () => {
         <NextUINavbar
             maxWidth="xl"
             height="100px"
-            className="bg-dark-grey/75 z-50 backdrop-blur-md backdrop-filter fixed"
+            className="bg-grey/75 z-50 backdrop-blur-md backdrop-filter fixed"
             isMenuOpen={isMenuOpen}
             onMenuOpenChange={() => setIsMenuOpen(!isMenuOpen)}
             isBlurred
@@ -45,7 +45,7 @@ export const Navbar = () => {
                     "data-[active=true]:after:right-0",
                     "data-[active=true]:after:h-[5px]",
                     "data-[active=true]:after:rounded-t-[5px]",
-                    "data-[active=true]:after:bg-light",
+                    "data-[active=true]:after:bg-tan-100",
                 ],
             }}
         >
@@ -76,7 +76,7 @@ export const Navbar = () => {
                             isActive={item.href === currentPath}
                         >
                             <NextLink
-                                className="text-light text-[20px] hover:drop-shadow-light transition ease-s-curve font-serif font-bold"
+                                className="text-tan-100 text-[20px] hover:drop-shadow-light transition ease-s-curve font-serif font-bold"
                                 href={item.href}
                             >
                                 {item.label}
@@ -95,7 +95,7 @@ export const Navbar = () => {
                     {siteConfig.navMenuItems.map((item, index) => (
                         <NavbarMenuItem key={`${item}-${index}`}>
                             <Link
-                                className="text-light font-sans text-[20px]"
+                                className="text-tan-100 font-sans text-[20px]"
                                 href="#"
                                 size="lg"
                             >

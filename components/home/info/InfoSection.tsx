@@ -1,23 +1,23 @@
 'use client';
 
-import HassleFreeCard from "./HassleFreeCard";
-import AboutUsCard from "./AboutUsCard";
+import HassleFreeRow from "./HassleFreeRow";
+import AboutUsRow from "./AboutUsRow";
 
 
 const InfoSection = () => {
     return (
-        <div className="grid gap-y-[100px] grid-rows-2 max-w-[1250px] items-center mx-auto m-[100px]">
-            <AboutUsCard
+        <section className="grid gap-y-[100px] grid-rows-2 max-w-[1250px] items-center mx-auto m-[100px]">
+            <AboutUsRow
                 imageSrc="/temp-hero.jpg"
                 imageAlt="temp"
                 title="About Us"
             />
-            <HassleFreeCard 
+            <HassleFreeRow 
                 imageSrc="/temp-hero.jpg"
                 imageAlt="temp"
                 title="Hassle-Free Renting"
             />
-        </div>
+        </section>
     )
 }
 

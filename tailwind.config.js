@@ -16,6 +16,7 @@ module.exports = {
                 'tan-200': "#DBDBD5",
                 'tan-300': '#D3D4CD',
                 'gold': '#C3AC3C',
+                'green-200': '#2C3D32',
                 'green-100': '#34473B',
                 'green-75': '#617A6B',
                 'green-50': '#869F90',

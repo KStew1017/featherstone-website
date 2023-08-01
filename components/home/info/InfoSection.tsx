@@ -6,7 +6,7 @@ import AboutUsRow from "./AboutUsRow";
 
 const InfoSection = () => {
     return (
-        <section className="grid gap-y-[100px] grid-rows-2 max-w-[1250px] items-center mx-auto m-[100px]">
+        <section className="grid gap-y-[100px] grid-rows-2 max-w-[1250px] items-center mx-auto m-[100px] mt-[65px]">
             <AboutUsRow
                 imageSrc="/temp-hero.jpg"
                 imageAlt="temp"

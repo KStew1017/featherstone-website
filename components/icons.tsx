@@ -31,3 +31,13 @@ export const Warehouse: React.FC<IconSvgProps> = ({
         <Image src="/warehouse.svg" alt="Warehouse Icon" width={90} height={90} />
     </>
 );
+
+export const BrandTan: React.FC<IconSvgProps> = ({
+    width,
+    height,
+    ...props
+}) => (
+    <>
+        <Image src="/tan-brand.svg" alt="Featherstone Brand" width={300} height={50} />
+    </>
+);

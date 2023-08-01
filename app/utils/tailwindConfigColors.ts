@@ -2,6 +2,7 @@ const tailwindConfig = require('../../tailwind.config.js');
 
 const tailwindCustomColors = {
     grey: tailwindConfig.theme.extend.colors['grey'],
+    lightGrey: tailwindConfig.theme.extend.colors['light-grey'],
     tan100: tailwindConfig.theme.extend.colors['tan-100'],
     tan200: tailwindConfig.theme.extend.colors['tan-200'],
     tan300: tailwindConfig.theme.extend.colors['tan-300'],

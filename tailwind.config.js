@@ -12,6 +12,7 @@ module.exports = {
         extend: {
             colors: {
                 'grey': '#455353',
+                'light-grey': '#D9D9D9',
                 'tan-100': '#E4E3DD',
                 'tan-200': "#DBDBD5",
                 'tan-300': '#D3D4CD',

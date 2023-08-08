@@ -5,7 +5,7 @@ import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 
 
-const phoneRegex = /^(\d{3})-(\d{3})-(\d{4})$/;
+const phoneRegex = /^(\d{3})(\d{3})(\d{4})$/;
 
 interface ErrorTextProps {
     children: string;
@@ -35,7 +35,7 @@ const ContactForm = () => {
                     }}
                     onSubmit={(values, { setSubmitting }) => {
                         setTimeout(() => {
-                            alert(JSON.stringify(values, null, 2));
+                            alert(JSON.stringify(values, null, 2));             //Replace later with a modal and send data to backend/database
                             setSubmitting(false);
                         }, 400);
                     }}

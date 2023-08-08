@@ -9,7 +9,7 @@ import { Card } from "@nextui-org/react";
 
 const FooterSection = () => {
     return (
-        <section className="flex items-center bg-green-100 h-[300px]">
+        <section className="flex items-center bg-green-100 h-[250px]">
             <div className="grid max-w-[1250px] mx-auto">
                 <div className="grid grid-cols-11 h-full items-center">
                     <FooterCard

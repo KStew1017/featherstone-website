@@ -5,8 +5,8 @@ import { FC, ReactComponentElement, ReactNode } from "react";
 interface Props {
     icon: any;
     title: string | ReactNode | ReactComponentElement<FC>;
-    styling: string;
     content: ReactComponentElement<FC> | ReactNode;
+    styling?: string;
 }
 
 const PerkCard: FC<Props> = ({ styling, icon, title, content }) => {
@@ -18,7 +18,8 @@ const PerkCard: FC<Props> = ({ styling, icon, title, content }) => {
                 padding: '10px',
                 backgroundColor: '#2C3D32',
                 border: 'none',
-                borderRadius: '50px'
+                borderRadius: '50px',
+                height: '410px',
             }}
         >
             <Card.Header>

@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Text } from '@nextui-org/react';
-import Image from "next/image";
+import { Reveal} from "@/components/reveal";
 import InfoCard from "./InfoCardContent";
 import React from "react";
 import AboutUsImage from "./AboutUsImage";
@@ -23,18 +23,22 @@ type AboutUsCardProps = {
 
 const AboutUsRow: FC<AboutUsCardProps> = ({ imageSrc, imageAlt, title }) => {
     return(
-        <div className="grid grid-cols-10 items-center">
-            <AboutUsImage 
-                imageSrc={imageSrc}
-                imageAlt={imageAlt}
-            />
-            <div className="col-start-6 col-span-5">
-                <InfoCard 
-                    title={title}
-                    content={<AboutUsContent />}
+        <Reveal hiddenVariant="hiddenY" visibleVariant="visibleY" delay={0.25}>
+            <div className="relative grid grid-cols-10 items-center">
+                <AboutUsImage 
+                    imageSrc={imageSrc}
+                    imageAlt={imageAlt}
                 />
+                <div className="col-start-6 col-span-5">
+                    <Reveal hiddenVariant="hiddenY" visibleVariant="visibleY" delay={0.5}>
+                        <InfoCard 
+                            title={title}
+                            content={<AboutUsContent />}
+                        />
+                    </Reveal>
+                </div>
             </div>
-        </div>
+        </Reveal>
     );
 };
 

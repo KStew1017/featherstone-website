@@ -3,6 +3,7 @@ import { Text } from '@nextui-org/react';
 import HassleFreeImage from "./HassleFreeImage";
 import InfoCard from "./InfoCardContent";
 import tailwindCustomColors from "@/app/utils/tailwindConfigColors";
+import { Reveal } from "@/components/reveal";
 
 
 const HassleFreeContent: FC = () => {
@@ -21,19 +22,22 @@ type HassleFreeCardProps = {
 
 const HassleFreeRow: FC<HassleFreeCardProps> = ({ imageSrc, imageAlt, title }) => {
     return(
-        <div className="grid grid-cols-10 items-center">
-            <div className="col-span-5">
-                <InfoCard
-                    title={title}
-                    content={<HassleFreeContent />}
-                    
+        <Reveal hiddenVariant="hiddenY" visibleVariant="visibleY" delay={0.25}>
+            <div className="grid grid-cols-10 items-center">
+                <div className="col-span-5">
+                    <Reveal hiddenVariant="hiddenY" visibleVariant="visibleY" delay={0.5}>
+                        <InfoCard
+                            title={title}
+                            content={<HassleFreeContent />}
+                        />
+                    </Reveal>
+                </div>
+                <HassleFreeImage
+                    imageSrc={imageSrc}
+                    imageAlt={imageAlt}
                 />
             </div>
-            <HassleFreeImage 
-                imageSrc={imageSrc}
-                imageAlt={imageAlt}
-            />
-        </div>
+        </Reveal>
     );
 };
 

@@ -8,7 +8,17 @@ export const Brand: React.FC<IconSvgProps> = ({
     ...props
 }) => (
     <>
-        <Image src="/brand-light.svg" alt="Featherstone Brand" width={225} height={76} />
+        <Image src="/brand-light.svg" alt="Featherstone Brand" width={225} height={76} priority={true} />
+    </>
+);
+
+export const BrandTan: React.FC<IconSvgProps> = ({
+    width,
+    height,
+    ...props
+}) => (
+    <>
+        <Image src="/tan-brand.svg" alt="Featherstone Brand" width={300} height={50} />
     </>
 );
 
@@ -28,16 +38,6 @@ export const Warehouse: React.FC<IconSvgProps> = ({
     ...props
 }) => (
     <>
-        <Image src="/warehouse.svg" alt="Warehouse Icon" width={90} height={90} />
-    </>
-);
-
-export const BrandTan: React.FC<IconSvgProps> = ({
-    width,
-    height,
-    ...props
-}) => (
-    <>
-        <Image src="/tan-brand.svg" alt="Featherstone Brand" width={300} height={50} />
+        <Image src="/warehouse.svg" alt="Warehouse Icon" width={90} height={90}  />
     </>
 );

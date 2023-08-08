@@ -13,7 +13,7 @@ const AboutUsImage: FC<AboutUsCardProps> = ({ imageSrc, imageAlt }) => {
             <Image
                 src={imageSrc}
                 alt={imageAlt}
-                layout="fill"
+                fill
                 objectFit="cover"
                 className="rounded-3xl"
             />

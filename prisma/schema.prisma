@@ -11,10 +11,22 @@ datasource db {
 }
 
 model Unit {
-    id         Int     @id @default(autoincrement())
-    number     Int     @unique
+    id         Int      @id @default(autoincrement())
+    number     Int      @unique
     building   Int
     squareFeet Int
-    bathroom   Boolean @default(true)
+    bathroom   Boolean  @default(true)
     office     Boolean
+    occupied   Boolean  @default(false)
+    tenant     Tenant[]
+}
+
+model Tenant {
+    id        Int     @id @default(autoincrement())
+    firstName String
+    lastName  String
+    email     String  @unique
+    phone     String?
+    unit      Unit    @relation(fields: [unitId], references: [id])
+    unitId    Int
 }

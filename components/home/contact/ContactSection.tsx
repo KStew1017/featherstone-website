@@ -21,11 +21,11 @@ const ContactForm = () => {
             <div className="max-w-[1250px] mx-auto">
                 <h1 className="justify-center text-grey font-serif font-bold text-[60px] mt-[50px] mb-[25px]">Interested In Renting?</h1>
                 <Formik
-                    initialValues={{ name: '', phone: '', use: '' }}
+                    initialValues={{ name: '', phone: '', usage: '' }}
                     validate={values => {
                         const errors: { [key: string]: string } = {};
                         if (!values.name) errors.name = 'Required';
-                        if (!values.use) errors.use = 'Required';
+                        if (!values.usage) errors.use = 'Required';
                         if (!values.phone) {
                             errors.phone = 'Required';
                         } else if (!phoneRegex.test(values.phone)) {

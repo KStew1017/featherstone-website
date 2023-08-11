@@ -26,11 +26,9 @@ export const Navbar = () => {
     return (
         <NextUINavbar
             maxWidth="xl"
-            height="100px"
-            className="bg-grey/75 z-50 backdrop-blur-md backdrop-filter fixed"
+            className="bg-grey/75 z-50 backdrop-blur-md backdrop-filter fixed h-[15%] max-h-[100px] lg:h-[100px] overflow-hidden"
             isMenuOpen={isMenuOpen}
             onMenuOpenChange={() => setIsMenuOpen(!isMenuOpen)}
-            isBlurred
             classNames={{
                 item: [
                     "flex",
@@ -51,15 +49,15 @@ export const Navbar = () => {
         >
             <NavbarContent className="basis-full min-[0px]:max-lg:hidden" justify="start">
                 <NavbarBrand as="li" className="max-w-fit">
-                    <NextLink className="flex justify-start items-center hover:drop-shadow-light transition ease-s-curve" href="/">
+                    <NextLink className="flex justify-start items-center hover:drop-shadow-light transition ease-s-curve " href="/">
                         <Brand />
                     </NextLink>
                 </NavbarBrand>
             </NavbarContent>
 
-            <NavbarContent className="basis-full lg:hidden" justify="center">
-                <NavbarBrand as="li" className="max-w-fit">
-                    <NextLink className="flex justify-start items-center hover:drop-shadow-light transition ease-s-curve" href="/">
+            <NavbarContent className="flex basis-full lg:hidden" justify="center">
+                <NavbarBrand as="li" className="max-w-[70%] h-[80%] justify-center">
+                    <NextLink href="/">
                         <Brand />
                     </NextLink>
                 </NavbarBrand>
@@ -86,17 +84,17 @@ export const Navbar = () => {
                 </ul>
             </NavbarContent>
 
-            <NavbarContent className="lg:hidden" justify="end">
+            <NavbarContent className="lg:hidden">
                 <NavbarMenuToggle aria-label={isMenuOpen ? "Close menu" : "Open menu"} />
             </NavbarContent>
 
             <NavbarMenu>
-                <div className="mx-4 mt-2 flex flex-col gap-2 justify-center items-center">
+                <div className="mx-auto mt-10 flex flex-col gap-10 justify-center items-center overflow-hidden">
                     {siteConfig.navMenuItems.map((item, index) => (
                         <NavbarMenuItem key={`${item}-${index}`}>
                             <Link
                                 className="text-tan-100 font-sans text-[20px]"
-                                href="#"
+                                href={item.href}
                                 size="lg"
                             >
                                 {item.label}

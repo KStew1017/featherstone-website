@@ -13,7 +13,7 @@ const Hero: FC<Props> = ({ siteName }) => {
             <div className="flex-1 flex items-center p-0">
                 <div className="max-w-2xl text-center mx-auto">
                     <Reveal hiddenVariant="hiddenY" visibleVariant="visibleY">
-                        <h1 className="font-serif text-[50px] sm:text-[75px] md:text-[100px] font-bold text-light">{siteName}</h1>
+                        <h1 className="font-serif text-[36px] sm:text-[75px] md:text-[100px] font-bold text-light">{siteName}</h1>
                     </Reveal>
                 </div>
             </div>

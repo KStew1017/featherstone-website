@@ -9,13 +9,13 @@ type AboutUsCardProps = {
 
 const AboutUsImage: FC<AboutUsCardProps> = ({ imageSrc, imageAlt }) => {
     return (
-        <div className="col-span-4 relative w-full h-[90%]">
+        <div className="col-span-full lg:col-span-4 relative w-full h-[200px] lg:h-[90%]">
             <Image
                 src={imageSrc}
                 alt={imageAlt}
                 fill
                 objectFit="cover"
-                className="rounded-3xl"
+                className="lg:rounded-[50px] rounded-t-[25px]"
             />
         </div>
     )

@@ -8,24 +8,22 @@ datasource db {
 }
 
 model Units {
-    id            Int     @id @default(autoincrement())
-    number        Int     @unique
-    connectedWith Units[]  @relation("ConnectedUnits")
-    connectedTo   Units[]  @relation("ConnectedUnits")
-    building      Int
-    squareFeet    Int     @default(1250)
-    bathroom      Boolean @default(true)
-    office        Boolean @default(false) 
-    occupied      Boolean @default(false)
-    tenant        Tenants? @relation(fields: [tenantId], references: [id])
-    tenantId      Int?
+    id          Int      @id @default(autoincrement())
+    number      String[] @unique
+    building    Int
+    square_feet Int      @default(1250)
+    bathroom    Boolean  @default(true)
+    office      Boolean  @default(false)
+    occupied    Boolean  @default(false)
+    tenant      Tenants? @relation(fields: [tenant_id], references: [id])
+    tenant_id   Int?
 }
 
 model Tenants {
-    id        Int    @id @default(autoincrement())
-    firstName String
-    lastName  String
-    email     String @unique
-    phone     String @unique
-    unit      Units[]
+    id         Int     @id @default(autoincrement())
+    first_name String  @default("")
+    last_name  String  @default("")
+    email      String  @unique
+    phone      String  @unique
+    unit       Units[]
 }

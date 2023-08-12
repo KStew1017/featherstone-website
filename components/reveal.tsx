@@ -6,13 +6,14 @@ import { motion, useInView, useAnimation } from "framer-motion";
 
 interface Props {
     children: JSX.Element | React.ReactNode;
-    hiddenVariant: "hiddenY" | "hiddenXPos" | "hiddenXNeg" | "hiddenScale";
-    visibleVariant: "visibleY" | "visibleXPos" | "visibleXNeg" | "visibleScale" | "none";
+    hiddenVariant: "hiddenY" | "hiddenYShort" | "hiddenFade" | "hiddenXPos" | "hiddenXNeg" | "hiddenScale" | "none";
+    visibleVariant: "visibleY" | "visibleYShort" | "visibleFade" | "visibleXPos" | "visibleXNeg" | "visibleScale" | "none";
     delay?: number;
     styling?: string;
+    isMobile?: boolean;
 }
 
-export const Reveal = ({ children, hiddenVariant, visibleVariant="none", styling, delay}: Props) => {
+export const Reveal = ({ children, hiddenVariant, visibleVariant="none", styling, delay, isMobile}: Props) => {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true });
 
@@ -21,7 +22,7 @@ export const Reveal = ({ children, hiddenVariant, visibleVariant="none", styling
     useEffect(() => {
         if (isInView) {
             controls.start(visibleVariant);
-        }
+        } 
     }, [isInView]);
 
     return (
@@ -38,6 +39,10 @@ export const Reveal = ({ children, hiddenVariant, visibleVariant="none", styling
                         opacity: 0,
                         y: 100
                     },
+                    hiddenYShort: {
+                        opacity: 0,
+                        y: 0
+                    },
                     hiddenXPos: {
                         opacity: 0,
                         x: 100,
@@ -45,6 +50,9 @@ export const Reveal = ({ children, hiddenVariant, visibleVariant="none", styling
                     hiddenXNeg: {
                         opacity: 0,
                         x: -100,
+                    },
+                    hiddenFade: {
+                        opacity: 0,
                     },
                     visibleY: {
                         opacity: 1,
@@ -65,6 +73,9 @@ export const Reveal = ({ children, hiddenVariant, visibleVariant="none", styling
                     visibleScale: {
                         opacity: 1,
                         scale: 1
+                    },
+                    visibleFade: {
+                        opacity: 1,
                     },
                     none: {
                         opacity: 1,

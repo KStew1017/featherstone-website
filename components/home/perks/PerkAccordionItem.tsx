@@ -20,7 +20,7 @@ interface Props {
 
 const PerkItem: FC<Props> = ({ title, content, icon, id }) => {
     return (
-        <AccordionItem id={id} className="col-span-full border-none">
+        <AccordionItem id={id} className="col-span-full border-none mt-[10px] mb-[10px]">
             <h2>
                 <AccordionButton className="rounded-full hover:bg-green-200">
                     <Box as="span" className="flex-1 flex ">

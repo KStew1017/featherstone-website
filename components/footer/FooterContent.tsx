@@ -1,5 +1,4 @@
 import { Text } from "@nextui-org/react"
-import Link from "next/link";
 import tailwindCustomColors from "@/app/utils/tailwindConfigColors";
 
 

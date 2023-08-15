@@ -7,7 +7,7 @@ import { BrandTan } from "@/components/icons";
 import { Card } from "@nextui-org/react";
 
 
-const FooterSection = () => {
+const Footer = () => {
     return (
         <section className="flex items-center bg-green-100 h-[250px]">
             <div className="grid max-w-[1250px] mx-auto">
@@ -37,4 +37,4 @@ const FooterSection = () => {
     )
 };
 
-export default FooterSection;
+export default Footer;

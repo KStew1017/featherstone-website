@@ -28,3 +28,11 @@ model Tenants {
     business_name String? @default("")
     unit          Units[]
 }
+
+model Contact {
+    id      Int      @id @default(autoincrement())
+    name    String
+    phone   String
+    message String
+    date    DateTime @default(now())
+}

@@ -30,7 +30,7 @@ const PerkItem: FC<Props> = ({ title, content, icon, id }) => {
                     <AccordionIcon />
                 </AccordionButton>
             </h2>
-            <AccordionPanel pb={4}>
+            <AccordionPanel pb={0}>
                 {content}
             </AccordionPanel>
         </AccordionItem>

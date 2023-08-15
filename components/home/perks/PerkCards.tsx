@@ -27,7 +27,7 @@ const PerkTiles = () => {
     const mapIcon = <FontAwesomeIcon icon={faMapLocationDot} size="3x" color={tailwindCustomColors.gold} />;
 
     return (
-            <div className="hidden lg:grid w-screen lg:max-w-[1250px] mx-auto">
+            <div className="hidden lg:grid lg:max-w-[1250px] w-[90%] mx-auto">
                 <div className="grid grid-cols-11 items-center">
                     <Reveal hiddenVariant="hiddenXNeg" visibleVariant="visibleXNeg" delay={0.5} styling={"col-span-3"}>
                         <PerkCard

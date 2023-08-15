@@ -57,7 +57,7 @@ export default function RootLayout({
     children: React.ReactNode;
 }) {
     return (
-        <html lang="en" className={`${jost.variable} ${ptserif.variable} font-sans bg-tan-100 selection:text-tan-100 selection:bg-gold/75`}>
+        <html lang="en" style={{ scrollBehavior: 'smooth' }} className={`${jost.variable} ${ptserif.variable} font-sans bg-tan-100 selection:text-tan-100 selection:bg-gold/75`}>
             <head />
             <body>
                 <Providers>

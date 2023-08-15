@@ -17,9 +17,9 @@ const ErrorText = ({ children }: ErrorTextProps) => (
 
 const ContactForm = () => {
     return (
-        <section className="flex bg-light-grey h-[600px]">
-            <div className="max-w-[1250px] mx-auto">
-                <h1 className="justify-center text-grey font-serif font-bold text-[60px] mt-[50px] mb-[25px]">Interested In Renting?</h1>
+        <section id='contact' className="flex bg-light-grey h-[600px]">
+            <div className="max-w-[1250px] mx-auto my-auto lg:my-0">
+                <h1 className="flex justify-center text-grey font-serif font-bold text-[36px] lg:text-[60px] lg:mt-[50px] mb-[25px]">Interested In Renting?</h1>
                 <Formik
                     initialValues={{ name: '', phone: '', usage: '' }}
                     validate={values => {
@@ -42,15 +42,15 @@ const ContactForm = () => {
                 >
                     {({ isSubmitting }) => (
                         <Form>
-                            <div className="flex gap-20 mb-[50px]">
-                                <div className="flex-1">
+                            <div className="flex-row lg:flex lg:gap-20 mb-[10px] lg:mb-[50px]">
+                                <div className="flex-auto mb-[10px] lg:mb-0">
                                     <div className="flex flex-col items-start">
                                         <label htmlFor="name" className="text-grey text-[24px] font-sans">Name</label>
                                         <Field id="name" type="text" name="name" className="bg-white w-full rounded-3xl text-grey p-[10px] focus:border-none focus:outline-none focus:shadow-lg" />
                                         <ErrorMessage name="name" component={ErrorText} />
                                     </div>
                                 </div>
-                                <div className="flex-1">
+                                <div className="flex-auto">
                                     <div className="flex flex-col items-start">
                                         <label htmlFor="phone" className="text-grey text-[24px] font-sans">Phone</label>
                                         <Field id="phone" type="tel" name="phone" className="bg-white w-full rounded-3xl text-grey p-[10px] focus:border-none focus:outline-none focus:shadow-lg" />

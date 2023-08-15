@@ -10,11 +10,10 @@ import {
     NavbarMenuItem,
 } from "@nextui-org/navbar";
 import { Brand } from "@/components/icons";
-import { Link } from "@nextui-org/link";
 import { siteConfig } from "@/config/site";
 import { useRouter, usePathname } from "next/navigation";
 import React from "react";
-import NextLink from "next/link";
+import Link from "next/link";
 
 
 export const Navbar = () => {
@@ -44,22 +43,22 @@ export const Navbar = () => {
                     "data-[active=true]:after:h-[5px]",
                     "data-[active=true]:after:rounded-t-[5px]",
                     "data-[active=true]:after:bg-tan-100",
-                ],
+                ]
             }}
         >
             <NavbarContent className="basis-full min-[0px]:max-lg:hidden" justify="start">
                 <NavbarBrand as="li" className="max-w-fit">
-                    <NextLink className="flex justify-start items-center hover:drop-shadow-light transition ease-s-curve " href="/">
+                    <Link className="flex justify-start items-center hover:drop-shadow-light transition ease-s-curve " href="/">
                         <Brand />
-                    </NextLink>
+                    </Link>
                 </NavbarBrand>
             </NavbarContent>
 
             <NavbarContent className="flex basis-full lg:hidden" justify="center">
                 <NavbarBrand as="li" className="max-w-[70%] h-[80%] justify-center">
-                    <NextLink href="/">
+                    <Link href="/">
                         <Brand />
-                    </NextLink>
+                    </Link>
                 </NavbarBrand>
             </NavbarContent>
 
@@ -73,12 +72,12 @@ export const Navbar = () => {
                             key={item.href}
                             isActive={item.href === currentPath}
                         >
-                            <NextLink
+                            <Link
                                 className="text-tan-100 text-[20px] hover:drop-shadow-light transition ease-s-curve font-serif font-bold"
                                 href={item.href}
                             >
                                 {item.label}
-                            </NextLink>
+                            </Link>
                         </NavbarItem>
                     ))}
                 </ul>

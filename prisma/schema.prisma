@@ -25,6 +25,6 @@ model Tenants {
     last_name     String  @default("")
     email         String  @unique
     phone         String  @unique
-    business_name String?  @default("")
+    business_name String? @default("")
     unit          Units[]
 }

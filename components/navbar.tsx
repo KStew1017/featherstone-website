@@ -74,7 +74,7 @@ export const Navbar = () => {
                         >
                             <Link
                                 className="text-tan-100 text-[20px] hover:drop-shadow-light transition ease-s-curve font-serif font-bold"
-                                href={item.href}
+                                href={item.href === '#contact' ? '/#contact' : item.href}
                             >
                                 {item.label}
                             </Link>

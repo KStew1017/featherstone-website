@@ -4,6 +4,7 @@ import { siteConfig } from "@/config/site";
 import { Providers } from "./providers";
 import { Navbar } from "@/components/navbar";
 import localFont from "next/font/local";
+import Footer from "@/components/footer/FooterSection";
 
 
 export const metadata: Metadata = {
@@ -65,6 +66,7 @@ export default function RootLayout({
                         <main>
                             <Navbar />
                             {children}
+                            <Footer />
                         </main>
                     </div>
                 </Providers>

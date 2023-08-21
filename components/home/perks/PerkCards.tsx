@@ -21,7 +21,7 @@ import {
 } from "./PerkContent";
 
 
-const PerkTiles = () => {
+const PerkCards = () => {
     const lockIcon = <FontAwesomeIcon icon={faLock} size="3x" color={tailwindCustomColors.gold} />;
     const cameraIcon = <FontAwesomeIcon icon={faCameraAlt} size="3x" color={tailwindCustomColors.gold} />;
     const mapIcon = <FontAwesomeIcon icon={faMapLocationDot} size="3x" color={tailwindCustomColors.gold} />;
@@ -55,4 +55,4 @@ const PerkTiles = () => {
     );
 }
 
-export default PerkTiles;
+export default PerkCards;

@@ -32,7 +32,7 @@ const PerkCard: FC<Props> = ({ styling, icon, title, content }) => {
                     {title}
                 </span>
             </Card.Header>
-            <Card.Divider className="" />
+            <Card.Divider />
             <Card.Body>
                 <span className="font-sans text-center text-[18px] mx-auto text-tan-100">
                     {content}

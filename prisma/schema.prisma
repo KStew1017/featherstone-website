@@ -9,7 +9,7 @@ datasource db {
 
 model Units {
     id          Int      @id @default(autoincrement())
-    number      String[] @unique
+    number      Int[]    @unique
     building    Int
     square_feet Int      @default(1250)
     bathroom    Boolean  @default(true)

@@ -25,7 +25,7 @@ export const Navbar = () => {
     return (
         <NextUINavbar
             maxWidth="xl"
-            className="bg-grey/75 z-50 backdrop-blur-sm backdrop-filter fixed h-[15%] max-h-[100px] lg:h-[100px] overflow-hidden"
+            className="bg-grey/75 z-50 backdrop-blur-md backdrop-filter fixed h-[15%] max-h-[100px] lg:h-[100px] overflow-hidden"
             isMenuOpen={isMenuOpen}
             onMenuOpenChange={() => setIsMenuOpen(!isMenuOpen)}
             classNames={{

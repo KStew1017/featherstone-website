@@ -5,6 +5,7 @@ import InfoCard from "./InfoCardContent";
 import React from "react";
 import AboutUsImage from "./AboutUsImage";
 import tailwindCustomColors from "@/app/utils/tailwindConfigColors";
+import useMousePosition from "@/app/utils/mouseTracker";
 
 
 const AboutUsContent: FC = () => {
@@ -22,7 +23,7 @@ type AboutUsCardProps = {
 };
 
 const AboutUsRow: FC<AboutUsCardProps> = ({ imageSrc, imageAlt, title }) => {
-    return(
+    return (
         <Reveal hiddenVariant="hiddenY" visibleVariant="visibleY" delay={0.25}>
             <div className="hidden lg:grid grid-cols-10 items-center">
                 <AboutUsImage

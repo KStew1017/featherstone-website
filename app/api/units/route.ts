@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import prisma from '@/prisma/client';
 
-export async function GET(req: NextRequest, res: NextResponse) {
+export async function GET() {
     try {
         const units = await prisma.units.findMany();
         return NextResponse.json({ status: "success", data: units });

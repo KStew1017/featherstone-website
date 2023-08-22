@@ -12,9 +12,9 @@ export async function POST(req: NextRequest, res: NextResponse) {
             }
         });
       
-         console.log(contact);
+        console.log(contact);
       
-         return NextResponse.json({ status: "success", data: contact });
+        return NextResponse.json({ status: "success", data: contact });
     } catch (error) {
         console.log(error);
         return NextResponse.json({ status: "error", message: error });

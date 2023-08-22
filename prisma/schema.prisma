@@ -23,8 +23,8 @@ model Tenants {
     id            Int     @id @default(autoincrement())
     first_name    String  @default("")
     last_name     String  @default("")
-    email         String  @unique
-    phone         String  @unique
+    email         String? @unique
+    phone         String? @unique
     business_name String? @default("")
     unit          Units[]
 }

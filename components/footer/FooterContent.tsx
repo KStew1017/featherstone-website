@@ -45,7 +45,7 @@ export const ContactUsContent2 = () => {
     return (
         <div>
             <a href='tel:817-879-6001' color={tailwindCustomColors.tan100}>
-                817-903-6579
+                817 - 903 - 6579
             </a>
         </div>
     )

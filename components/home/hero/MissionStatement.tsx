@@ -6,7 +6,7 @@ export default function MissionStatement() {
     return (
         <section className="flex flex-col min-h-[20%] bg-tan-100">
             <div className="flex gap-[90px] justify-center sm:max-w-[90%] lg:max-w-[90%] mx-auto items-center sm:pt-[35px] lg:pb-[35px]">
-                <div className="hidden lg:flex overflow-hidden">
+                <div className="hidden lg:flex">
                     <Reveal hiddenVariant="hiddenXNeg" visibleVariant="visibleXNeg" delay={0.5}>
                         <Warehouse />
                     </Reveal>
@@ -18,7 +18,7 @@ export default function MissionStatement() {
                         </p>
                     </div>
                 </Reveal>
-                <div className="hidden lg:flex overflow-hidden">
+                <div className="hidden lg:flex">
                     <Reveal hiddenVariant="hiddenXPos" visibleVariant="visibleXPos" delay={0.5}>
                         <Warehouse />
                     </Reveal>

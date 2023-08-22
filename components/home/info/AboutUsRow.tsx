@@ -24,14 +24,14 @@ type AboutUsCardProps = {
 
 const AboutUsRow: FC<AboutUsCardProps> = ({ imageSrc, imageAlt, title }) => {
     return (
-        <Reveal hiddenVariant="hiddenY" visibleVariant="visibleY" delay={0.25}>
+        <Reveal hiddenVariant="hiddenY" visibleVariant="visibleY" delay={0.2 + Math.random() * 0.4}>
             <div className="hidden lg:grid grid-cols-10 items-center">
                 <AboutUsImage
                     imageSrc={imageSrc}
                     imageAlt={imageAlt}
                 />
                 <div className="col-start-6 col-span-5">
-                    <Reveal hiddenVariant="hiddenY" visibleVariant="visibleY" delay={0.5}>
+                    <Reveal hiddenVariant="hiddenY" visibleVariant="visibleY" delay={0.2 + Math.random() * 0.4}>
                         <InfoCard 
                             title={title}
                             content={<AboutUsContent />}
@@ -47,7 +47,7 @@ const AboutUsRow: FC<AboutUsCardProps> = ({ imageSrc, imageAlt, title }) => {
                     imageAlt={imageAlt}
                 />
                 <div className="col-span-full">
-                    <Reveal hiddenVariant="hiddenYShort" visibleVariant="visibleY" delay={0.5}>
+                    <Reveal hiddenVariant="hiddenYShort" visibleVariant="visibleY" delay={0.2 + Math.random() * 0.4}>
                         <InfoCard 
                             title={title}
                             content={<AboutUsContent />}

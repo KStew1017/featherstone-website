@@ -3,6 +3,7 @@
 
 import { useState } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Reveal } from '@/components/reveal';
 
 
 interface ErrorTextProps {
@@ -74,7 +75,7 @@ const ContactForm = () => {
 
     return (
         <section id='contact' className="flex bg-light-grey h-fit">
-            <div className="max-w-[1250px] mx-auto my-[50px]">
+            <Reveal hiddenVariant="hiddenXNeg" visibleVariant="visibleXNeg" styling='max-w-[1250px] mx-auto my-[50px]' delay={0.2 + Math.random() * 0.4}>
                 <h1 className="flex justify-center text-grey font-serif font-bold text-[36px] lg:text-[60px] mb-[25px]">Interested In Renting?</h1>
                 <Formik
                     initialValues={{ name: '', phone: '', message: '' }}
@@ -97,7 +98,7 @@ const ContactForm = () => {
                     }}
                     onSubmit={handleSubmit}
                 >
-                    <Form title='contact form'>
+                    <Form title='contact form' autoComplete='off' autoCorrect='off'>
                         <div className="flex-row lg:flex lg:gap-20 mb-[10px] lg:mb-[50px]">
                             <div className="flex-1 mb-[10px] lg:mb-0">
                                 <div className="flex flex-col">
@@ -130,7 +131,7 @@ const ContactForm = () => {
                         </div>
                     </Form>
                 </Formik>
-            </div>
+            </Reveal>
         </section>
     )
 };

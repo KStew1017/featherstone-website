@@ -33,6 +33,8 @@ module.exports = {
         fontFamily: {
             sans: ['var(--font-jost)'],
             serif: ['var(--font-ptserif)'],
+            northwell: ['var(--font-northwell)'],
+            northwellSwash: ['var(--font-northwell-swash)'],
         }
     },
     darkMode: "class",

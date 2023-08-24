@@ -1,8 +1,11 @@
 'use client';
 
+
 import { Reveal } from "@/components/reveal";
 import { Divider } from "@chakra-ui/react";
 import Link from "next/link";
+import useMouse from '@react-hook/mouse-position';
+import { useRef } from "react";
 
 interface Unit {
     number: number[];
@@ -34,7 +37,7 @@ const Units = ({ units }: { units: Unit[] }) => {
             <>
                 {units.map((unit) => (
                     <Reveal hiddenVariant="hiddenY" visibleVariant="visibleY" delay={0.2 + Math.random() * 0.4}>
-                        <div className="mx-[25px] col-span-1 bg-light-grey h-fit rounded-[50px] justify-center hover:translate-y-[-15px] hover:scale-105 hover:drop-shadow-2xl transition-all ease-s-curve" key={unit.number.toString()}>
+                        <div  className="mx-[25px] col-span-1 bg-light-grey h-fit rounded-[50px] justify-center hover:translate-y-[-15px] hover:scale-105 hover:drop-shadow-2xl transition-all ease-s-curve" key={unit.number.toString()}>
                             <div className="flex flex-col items-center py-[25px]">
                                 <h1 className="text-grey font-serif font-bold text-[20px] lg:text-[54px] mx-auto">{getUnitNumber(unit)}</h1>
                                 <p className="text-grey font-sans text-[14px] lg:text-[20px]">{unit.square_feet} sq. ft.</p>

@@ -52,13 +52,29 @@ const ptserif = localFont({
     variable:  '--font-ptserif'
 });
 
-export default function RootLayout({
-    children,
-}: {
-    children: React.ReactNode;
-    }) {
+const northwell = localFont({
+    src: [
+        {
+            path: "../public/fonts/Northwell.ttf",
+            weight: "normal",
+        }
+    ],
+    variable:  '--font-northwell'
+});
+
+const northwellSwash = localFont({
+    src: [
+        {
+            path: "../public/fonts/Northwell-Swash.ttf",
+            weight: "normal",
+        }
+    ],
+    variable:  '--font-northwell-swash'
+});
+
+export default function RootLayout({children}: {children: React.ReactNode}) {
     return (
-        <html lang="en" className={`${jost.variable} ${ptserif.variable} font-sans bg-tan-100 selection:text-tan-100 selection:bg-gold/75 scroll-smooth`}>
+        <html lang="en" className={`${jost.variable} ${ptserif.variable} ${northwell.variable} ${northwellSwash.variable} font-sans bg-tan-100 selection:text-tan-100 selection:bg-gold/75 scroll-smooth`}>
             <head />
             <body>
                 <Providers>

@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { FC } from 'react'
-import { motion, useScroll, useTransform } from 'framer-motion';
+
 
 
 type AboutUsCardProps = {
@@ -9,11 +9,8 @@ type AboutUsCardProps = {
 };
 
 const AboutUsImage: FC<AboutUsCardProps> = ({ imageSrc, imageAlt }) => {
-    const { scrollY } = useScroll();
-    const y1 = useTransform(scrollY, [0, 1000], ["0%", "50%"]);
-
     return (
-        <div className="col-span-full lg:col-span-4 relative w-full h-[200px] lg:h-[90%]" style={{ y1 }}>
+        <div className="col-span-full lg:col-span-4 relative w-full h-[200px] lg:h-[90%]">
             <Image
                 src={imageSrc}
                 alt={imageAlt}

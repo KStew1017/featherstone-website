@@ -5,7 +5,8 @@ import InfoCard from "../InfoCardContent";
 import tailwindCustomColors from "@/app/utils/tailwindConfigColors";
 import { Reveal } from "@/components/reveal";
 import { useState, useEffect } from "react";
-import { HassleFreeContent } from "./HassleFreeContent";
+import { HassleFreeContent } from "./HassleFreeCard";
+import { HassleFreeCard } from "./HassleFreeCard";
 
 
 interface HassleFreeCardProps {
@@ -18,15 +19,7 @@ const HassleFreeRow: FC<HassleFreeCardProps> = ({ imageSrc, imageAlt, title }) =
     return(
         <Reveal hiddenVariant="hiddenY" visibleVariant="visibleY" delay={0.2 + Math.random() * 0.4}>
             <div className="hidden lg:grid grid-cols-10 items-center lg:mb-[100px]">
-                <div className="col-span-5">
-                    <Reveal hiddenVariant="hiddenY" visibleVariant="visibleY" delay={0.2 + Math.random() * 0.4}>
-                        <InfoCard 
-                            title={title}
-                            content={<HassleFreeContent />}
-                            bRadius='50px'
-                        />
-                    </Reveal>
-                </div>
+                <HassleFreeCard title={title} />
                 <HassleFreeImage
                     imageSrc={imageSrc}
                     imageAlt={imageAlt}

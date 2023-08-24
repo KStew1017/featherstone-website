@@ -12,8 +12,8 @@ interface Props {
 }
 
 const Hero: FC<Props> = ({ siteName }) => {
-    let { scrollY } = useScroll();
-    let y = useTransform(scrollY, [0, 1000], ["0%", "75%"]);
+    const { scrollY } = useScroll();
+    const y = useTransform(scrollY, [0, 1000], ["0%", "50%"]);
 
     return (
         <section className="flex flex-col min-h-screen relative ">

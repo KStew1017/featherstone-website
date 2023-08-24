@@ -6,8 +6,8 @@ import React from "react";
 import AboutUsImage from "./AboutUsImage";
 import tailwindCustomColors from "@/app/utils/tailwindConfigColors";
 import useMousePosition from "@/app/utils/mouseTracker";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { AboutUsContent } from "./AboutUsContent";
+import { AboutUsContent } from "./AboutUsCard";
+import { AboutUsCard } from "./AboutUsCard";
 
 
 type AboutUsCardProps = {
@@ -24,15 +24,7 @@ const AboutUsRow: FC<AboutUsCardProps> = ({ imageSrc, imageAlt, title }) => {
                     imageSrc={imageSrc}
                     imageAlt={imageAlt}
                 />
-                <div className="col-start-6 col-span-5">
-                    <Reveal hiddenVariant="hiddenY" visibleVariant="visibleY" delay={0.2 + Math.random() * 0.4}>
-                        <InfoCard 
-                            title={title}
-                            content={<AboutUsContent />}
-                            bRadius='50px'
-                        />
-                    </Reveal>
-                </div>
+                <AboutUsCard title={title} />
             </div>
 
             <div className="lg:hidden grid grid-rows-auto grid-cols-10 items-center">

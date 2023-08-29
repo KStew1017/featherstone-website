@@ -20,9 +20,7 @@ export const Reveal = ({ children, hiddenVariant, visibleVariant="none", styling
     const controls = useAnimation();
 
     useEffect(() => {
-        if (isInView) {
-            controls.start(visibleVariant);
-        } 
+        if (isInView) controls.start(visibleVariant);
     }, [isInView]);
 
     return (

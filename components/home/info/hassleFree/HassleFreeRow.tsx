@@ -1,10 +1,7 @@
 import { FC } from "react";
-import { Text } from '@nextui-org/react';
 import HassleFreeImage from "./HassleFreeImage";
 import InfoCard from "../InfoCardContent";
-import tailwindCustomColors from "@/app/utils/tailwindConfigColors";
 import { Reveal } from "@/components/reveal";
-import { useState, useEffect } from "react";
 import { HassleFreeContent } from "./HassleFreeCard";
 import { HassleFreeCard } from "./HassleFreeCard";
 
@@ -18,7 +15,7 @@ interface HassleFreeCardProps {
 const HassleFreeRow: FC<HassleFreeCardProps> = ({ imageSrc, imageAlt, title }) => {
     return(
         <Reveal hiddenVariant="hiddenY" visibleVariant="visibleY" delay={0.2 + Math.random() * 0.4}>
-            <div className="hidden lg:grid grid-cols-10 items-center lg:mb-[100px]">
+            <div className="hidden lg:grid grid-cols-10 items-center lg:mb-[125px]">
                 <HassleFreeCard title={title} />
                 <HassleFreeImage
                     imageSrc={imageSrc}

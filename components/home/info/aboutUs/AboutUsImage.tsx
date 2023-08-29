@@ -2,7 +2,6 @@ import Image from 'next/image'
 import { FC } from 'react'
 
 
-
 type AboutUsCardProps = {
     imageSrc: string;
     imageAlt: string;

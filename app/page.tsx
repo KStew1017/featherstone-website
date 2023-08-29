@@ -7,14 +7,13 @@ import Footer from "@/components/footer/FooterSection";
 import UnitsBanner from "@/components/home/units/UnitsBanner";
 
 
-
 const Home = () => {
     return (
         <>
             <Hero siteName={siteConfig.name} />
+            <UnitsBanner />
             <InfoSection />
             <PerksSection />
-            <UnitsBanner />
             <ContactForm />
             <Footer />
         </>

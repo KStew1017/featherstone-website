@@ -27,7 +27,7 @@ const Units = ({ units }: { units: Unit[] }) => {
         return (
             <Reveal hiddenVariant="hiddenXPos" visibleVariant="visibleXPos" styling="col-span-full" delay={0.2 + Math.random() * 0.4}>
                 <p className="text-grey font-sans text-[16px] lg:text-[24px] text-center">
-                    All units are currently occupied. If you are still interested, please call or contact us through the form below.
+                    All units are currently occupied. If you are still interested, please call or contact us via <a href="/#contact" className="text-gold hover:drop-shadow-lg transition ease-s-curve">this form</a>.
                 </p>
             </Reveal>
         );
@@ -55,7 +55,7 @@ const Units = ({ units }: { units: Unit[] }) => {
                                 <Divider borderColor={'gray'} className="w-[80%] mb-[25px]" />
                                 <p className="text-grey font-sans text-[14px] lg:text-[20px]">Contact us for pricing details</p>
                                 <div className="flex">
-                                    <button type="button" className="bg-gold/75 hover:bg-gold text-tan-100 font-sans text-[14px] lg:text-[20px] rounded-[50px] px-[25px] py-[10px] mt-[25px] mx-[25px] hover:drop-shadow-light transition ease-s-curve"><Link href='#contact'>Contact</Link></button>
+                                    <button type="button" className="bg-gold/75 hover:bg-gold text-tan-100 font-sans text-[14px] lg:text-[20px] rounded-[50px] px-[25px] py-[10px] mt-[25px] mx-[25px] hover:drop-shadow-light transition ease-s-curve"><Link href='/#contact'>Contact</Link></button>
                                     <button type="button" className="bg-green-75 hover:bg-green-100 text-tan-100 font-sans text-[14px] lg:text-[20px] rounded-[50px] px-[25px] py-[10px] mt-[25px] mx-[25px] hover:drop-shadow-light transition ease-s-curve">View Unit</button>
                                 </div>
                             </div>

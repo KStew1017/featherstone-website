@@ -16,7 +16,7 @@ interface AboutUsCardProps {
 const AboutUsRow: FC<AboutUsCardProps> = ({ imageSrc, imageAlt, title }) => {
     return (
         <Reveal hiddenVariant="hiddenY" visibleVariant="visibleY" delay={0.2 + Math.random() * 0.4}>
-            <div className="hidden lg:grid grid-cols-10 items-center lg:mt-[65px]">
+            <div className="hidden lg:grid grid-cols-10 items-center lg:mt-[30px]">
                 <AboutUsImage
                     imageSrc={imageSrc}
                     imageAlt={imageAlt}

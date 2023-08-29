@@ -1,6 +1,5 @@
 'use client';
 
-
 import { useState } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { Reveal } from '@/components/reveal';
@@ -10,11 +9,17 @@ interface ErrorTextProps {
     children: string;
 };
 
+interface values {
+    name: string;
+    phone: string;
+    message: string;
+};
+
 const ContactForm = () => {
     const phoneRegex = /^(?:\d{3}-\d{3}-\d{4}|\d{10})$/;
 
     const ErrorText = ({ children }: ErrorTextProps) => (
-        <div className="text-red-500 text-[14px]">{children}</div>
+        <div className="text-red-700 text-[14px]">{children}</div>
     );
 
     const [loading, setLoading] = useState(false);
@@ -43,10 +48,10 @@ const ContactForm = () => {
         return true;
     }
 
-    const handleSubmit = async (values: { name: string, phone: string, message: string }) => {
+    const handleSubmit = async (values: values) => {
         if (!handleCookie()) {
             return;
-        }
+        };
 
         try {
             setLoading(true);
@@ -65,13 +70,13 @@ const ContactForm = () => {
                 console.log(success)
             } else {
                 setSuccess(false);
-            }
+            };
         } catch (err) {
             console.log(err);
         } finally {
             setLoading(false);
-        }
-    }
+        };
+    };
 
     return (
         <section id='contact' className="flex bg-light-grey h-fit relative">
@@ -124,7 +129,7 @@ const ContactForm = () => {
                         </div>
                         <div>
                             <div className="flex flex-col items-end ">
-                                <button id="submit" type="submit" disabled={loading} className="bg-gold h-[50px] w-[180px] text-[24px] rounded-full">
+                                <button id="submit" type="submit" disabled={loading} className="bg-gold/75 shadow-none hover:drop-shadow-lg hover:bg-gold transition ease-s-curve h-[50px] w-[180px] text-[24px] rounded-full">
                                     SUBMIT
                                 </button>
                             </div>

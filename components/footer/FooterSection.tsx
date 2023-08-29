@@ -1,22 +1,22 @@
 'use client';
 
-
 import FooterCard from "./FooterCard";
 import * as FooterCardContent from "./FooterContent";
 import { BrandTan } from "@/components/icons";
 import { Card } from "@nextui-org/react";
+import { Unit } from "@/types";
 
 
-interface FooterProps {
-    className?: string;
+interface FooterCardProps {
+    units?: Unit[] | undefined;
 }
 
-const Footer = ({ className }: FooterProps) => {
-    const mobileStyle = className && className.includes("mobile") ? "absolute bottom-0 w-full" : "";
+const Footer: React.FC<FooterCardProps> = ({ units }) => {
+    const unitsAvailable = (units && units.length === 0) ? "absolute bottom-0 w-full" : "relative bottom-0 w-full";
 
     return (
-        <section className={`flex items-center bg-green-100 h-[250px] ${mobileStyle}`}>
-            <div className="grid max-w-[1250px] mx-auto">
+        <section className={`flex items-center bg-grey h-[250px] ${unitsAvailable}`}>
+            <div className="grid max-w-[90%] mx-auto">
                 <div className="grid grid-cols-11 h-full items-center">
                     <FooterCard
                         header={<BrandTan />}

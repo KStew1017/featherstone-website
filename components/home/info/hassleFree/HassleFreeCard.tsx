@@ -12,7 +12,7 @@ export const HassleFreeContent: FC = () => {
     );
 };
 
-export const HassleFreeCard: FC = ({ title}) => {
+export const HassleFreeCard: FC<{ title: string }> = ({ title}) => {
     return (
         <div className="col-span-5">
             <InfoCard 

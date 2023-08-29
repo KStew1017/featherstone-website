@@ -89,13 +89,12 @@ export const Navbar = () => {
                     </ul>
                 </NavbarContent>
 
-
                 <NavbarContent className="lg:hidden absolute right-[5%]">
                     <NavbarMenuToggle aria-label={isMenuOpen ? "Close menu" : "Open menu"} />
                 </NavbarContent>
 
-                <NavbarMenu className="bg-grey/75 top-[7.8%]">
-                    <div className="mx-auto flex flex-col gap-10 justify-center items-center mt-[50px] overflow-hidden">
+                <NavbarMenu className="bg-grey">
+                    <div className="mx-auto flex flex-col gap-10 justify-center items-center pt-[75px] overflow-hidden">
                         {siteConfig.navMenuItems.map((item, index) => (
                             <NavbarMenuItem key={`${item}-${index}`}>
                                 <Link

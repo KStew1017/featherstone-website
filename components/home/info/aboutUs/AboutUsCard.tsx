@@ -13,7 +13,7 @@ export const AboutUsContent: FC = () => {
     );
 };
 
-export const AboutUsCard: FC = ({ title}) => {
+export const AboutUsCard: FC<{ title: string }> = ({ title }) => {
     return (
         <div className="col-start-6 col-span-5">
             <Reveal hiddenVariant="hiddenY" visibleVariant="visibleY" delay={0.2 + Math.random() * 0.4}>

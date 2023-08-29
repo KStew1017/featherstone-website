@@ -4,8 +4,6 @@
 import { Reveal } from "@/components/reveal";
 import { Divider } from "@chakra-ui/react";
 import Link from "next/link";
-import useMouse from '@react-hook/mouse-position';
-import { useRef } from "react";
 
 
 interface Unit {
@@ -38,21 +36,21 @@ const Units = ({ units }: { units: Unit[] }) => {
             <>
                 {units.map((unit) => (
                     <Reveal hiddenVariant="hiddenY" visibleVariant="visibleY" delay={0.2 + Math.random() * 0.4}>
-                        <div className="mx-[25px] col-span-1 bg-light-grey h-fit rounded-[50px] justify-center hover:translate-y-[-15px] hover:scale-105 hover:drop-shadow-2xl transition-all ease-s-curve" key={unit.number.toString()}>
+                        <div className="md:mx-[25px] col-span-1 bg-tan-200 h-fit rounded-[50px] justify-center lg:hover:translate-y-[-15px] lg:hover:scale-105 lg:hover:drop-shadow-2xl transition-all ease-s-curve" key={unit.number.toString()}>
                             <div className="flex flex-col items-center py-[25px]">
-                                <h1 className="text-grey font-serif font-bold text-[20px] lg:text-[54px] mx-auto">{getUnitNumber(unit)}</h1>
+                                <h1 className="text-grey font-serif font-bold text-[50px] lg:text-[54px] mx-auto">{getUnitNumber(unit)}</h1>
                                 <p className="text-grey font-sans text-[14px] lg:text-[20px]">{unit.square_feet} sq. ft.</p>
                                 <Divider borderColor={'gray'} className="w-[80%] my-[25px]" />
-                                <h2 className="text-grey font-bold font-sans text-[14px] lg:text-[20px]">Amentities</h2>
+                                <h2 className="text-grey font-bold font-sans text-[20px] lg:text-[20px]">Amentities</h2>
                                 <div className="grid grid-cols-2 grid-flow-row grid-rows-[auto,auto] w-[70%] gap-x-[50px] my-[25px]">
                                     {unit.office && (
-                                        <p className="text-grey font-sans text-[14px] lg:text-[20px]">- Office Included</p>
+                                        <p className="text-grey font-sans text-[16px] lg:text-[20px]">- Office Included</p>
                                         )}
                                     {unit.bathroom && (
-                                        <p className="col-span-1 text-grey font-sans text-[14px] lg:text-[20px]">- Bathroom Included</p>
+                                        <p className="col-span-1 text-grey font-sans text-[16px] lg:text-[20px]">- Bathroom Included</p>
                                         )}
-                                    <p className="col-span-1 text-grey font-sans text-[14px] lg:text-[20px]">- Internet Access</p>
-                                    <p className="col-span-1 text-grey font-sans text-[14px] lg:text-[20px]">- 24/7 Gate Access</p>
+                                    <p className="col-span-1 text-grey font-sans text-[16px] lg:text-[20px]">- Internet Access</p>
+                                    <p className="col-span-1 text-grey font-sans text-[16px] lg:text-[20px]">- 24/7 Gate Access</p>
                                 </div>
                                 <Divider borderColor={'gray'} className="w-[80%] mb-[25px]" />
                                 <p className="text-grey font-sans text-[14px] lg:text-[20px]">Contact us for pricing details</p>

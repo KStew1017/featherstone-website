@@ -2,19 +2,21 @@ import { siteConfig } from "@/config/site";
 import Hero from "@/components/home/hero/Hero";
 import InfoSection from "@/components/home/info/InfoSection";
 import PerksSection from "@/components/home/perks/PerksSection";
-import UnitsSection from "@/components/home/units/UnitsSection";
 import ContactForm from "@/components/home/contact/ContactForm";
+import Footer from "@/components/footer/FooterSection";
+import UnitsBanner from "@/components/home/units/UnitsBanner";
 
 
 
-const Home = async () => {
+const Home = () => {
     return (
         <>
             <Hero siteName={siteConfig.name} />
             <InfoSection />
             <PerksSection />
-            <UnitsSection />
+            <UnitsBanner />
             <ContactForm />
+            <Footer />
         </>
     );
 };

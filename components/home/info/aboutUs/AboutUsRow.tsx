@@ -1,16 +1,13 @@
 import { FC } from "react";
-import { Text } from '@nextui-org/react';
 import { Reveal} from "@/components/reveal";
 import InfoCard from "../InfoCardContent";
 import React from "react";
 import AboutUsImage from "./AboutUsImage";
-import tailwindCustomColors from "@/app/utils/tailwindConfigColors";
-import useMousePosition from "@/app/utils/mouseTracker";
 import { AboutUsContent } from "./AboutUsCard";
 import { AboutUsCard } from "./AboutUsCard";
 
 
-type AboutUsCardProps = {
+interface AboutUsCardProps {
   imageSrc: string;
   imageAlt: string;
   title: string;

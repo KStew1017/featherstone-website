@@ -1,16 +1,21 @@
 'use client';
 
 
-import { Reveal } from "../reveal";
 import FooterCard from "./FooterCard";
 import * as FooterCardContent from "./FooterContent";
 import { BrandTan } from "@/components/icons";
 import { Card } from "@nextui-org/react";
 
 
-const Footer = () => {
+interface FooterProps {
+    className?: string;
+}
+
+const Footer = ({ className }: FooterProps) => {
+    const mobileStyle = className && className.includes("mobile") ? "absolute bottom-0 w-full" : "";
+
     return (
-        <section className="flex items-center bg-green-100 h-[250px]">
+        <section className={`flex items-center bg-green-100 h-[250px] ${mobileStyle}`}>
             <div className="grid max-w-[1250px] mx-auto">
                 <div className="grid grid-cols-11 h-full items-center">
                     <FooterCard

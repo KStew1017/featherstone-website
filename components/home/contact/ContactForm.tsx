@@ -74,7 +74,7 @@ const ContactForm = () => {
     }
 
     return (
-        <section id='contact' className="flex bg-light-grey h-fit">
+        <section id='contact' className="flex bg-light-grey h-fit relative">
             <Reveal hiddenVariant="hiddenXNeg" visibleVariant="visibleXNeg" styling='max-w-[1250px] mx-auto my-[50px]' delay={0.2 + Math.random() * 0.4}>
                 <h1 className="flex justify-center text-grey font-serif font-bold text-[36px] lg:text-[60px] mb-[25px]">Interested In Renting?</h1>
                 <Formik

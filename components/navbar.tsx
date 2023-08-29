@@ -15,6 +15,7 @@ import { useRouter, usePathname } from "next/navigation";
 import React from "react";
 import Link from "next/link";
 import { motion, useScroll } from "framer-motion";
+import '../styles/style.css'
 
 
 export const Navbar = () => {
@@ -29,7 +30,7 @@ export const Navbar = () => {
         <>
             <NextUINavbar
                 maxWidth="xl"
-                className="bg-grey/75 z-50 backdrop-blur-md backdrop-filter fixed h-[15%] max-h-[100px] lg:h-[100px] overflow-hidden"
+                className="bg-grey/75 z-50 backdrop-blur-md backdrop-filter fixed h-[100px] lg:h-[100px] overflow-hidden"
                 isMenuOpen={isMenuOpen}
                 onMenuOpenChange={() => setIsMenuOpen(!isMenuOpen)}
                 classNames={{
@@ -109,22 +110,10 @@ export const Navbar = () => {
                 </NavbarMenu>
             </NextUINavbar>
             <motion.div
-                style={{ ...styles.progressBar, scaleX: scrollYProgress }}
+                style={{ scaleX: scrollYProgress }}
+                className="progress-bar"
             />
         </>
     );
 };
 
-const styles = {
-    progressBar: {
-        position: "fixed",
-        top: 100,
-        left: 0,
-        right: 0,
-        height: "5px",
-        background: "#C3AC3C",
-        transformOrigin: "0%",
-        zIndex: 100,
-
-    }
-};

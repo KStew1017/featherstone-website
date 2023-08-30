@@ -28,8 +28,6 @@ const UnitsBanner = () => {
 
     const availableUnits = Array(numUnits).fill('See Available Units');
 
-    console.log(numUnits)
-
     return (
         <section className='relative bg-tan-100 h-[200px] lg:h-[300px] flex items-center overflow-hidden lg:pt-[0px] pt-[50px]'>
             <div className='h-[100px] lg:h-[200px] flex items-center border-t-5 border-b-5 border-gold bg-tan-200'>

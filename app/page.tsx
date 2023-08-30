@@ -10,7 +10,7 @@ import UnitsBanner from "@/components/home/units/UnitsBanner";
 const Home = () => {
     return (
         <>
-            <Hero siteName={siteConfig.name} />
+            <Hero title={siteConfig.name} />
             <UnitsBanner />
             <InfoSection />
             <PerksSection />

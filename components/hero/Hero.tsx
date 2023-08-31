@@ -1,6 +1,5 @@
 'use client';
 
-
 import MissionStatement from "./MissionStatement";
 import { FC, ReactNode } from "react";
 import { Reveal } from "@/components/reveal";
@@ -15,6 +14,8 @@ interface Props {
 const Hero: FC<Props> = ({ title }) => {
     const { scrollY } = useScroll();
     const y = useTransform(scrollY, [0, 1000], [0, 450]);
+    const scale = useTransform(scrollY, [0, 1000], [1, 1.1]);
+    const opacity = useTransform(scrollY, [0, 1000], [1, 0.5]);
     const currentPath = usePathname();
 
     const isHomePage: ReactNode = (currentPath === "/") ? <MissionStatement /> : null;
@@ -23,8 +24,8 @@ const Hero: FC<Props> = ({ title }) => {
     const isLocationPageWidth: string = (currentPath === "/location") ? "max-w-[75%]" : "max-w-2xl";
 
     return (
-        <section className={`flex flex-col ${isHomePageHeight} relative`}>
-            <motion.div className="absolute inset-0 bg-[url(../public/sheet-metal.jpg)] bg-center bg-cover bg-blend-overlay bg-black/20" style={{ y }} />
+        <section className={`flex flex-col ${isHomePageHeight} relative overflow-hidden`}>
+            <motion.div className="absolute inset-0 bg-[url(../public/sheet-metal.jpg)] bg-center bg-cover bg-blend-overlay bg-black/20" style={{ y, scale, opacity }} />
             <div className="flex-1 flex items-center p-0">
                 <div className={`${isLocationPageWidth} text-center mx-auto`}>
                     <Reveal hiddenVariant="hiddenY" visibleVariant="visibleY">

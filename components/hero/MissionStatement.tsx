@@ -1,4 +1,4 @@
-import { Warehouse } from "../../icons"
+import { Warehouse } from "../icons"
 import { Reveal } from "@/components/reveal"
 
 

@@ -1,5 +1,5 @@
 import { FC } from "react";
-import tailwindCustomColors from "@/app/utils/tailwindConfigColors";
+import tailwindCustomColors from "@/utils/tailwindConfigColors";
 import { Text } from "@chakra-ui/react";
 import InfoCard from "../InfoCardContent";
 

@@ -1,10 +1,11 @@
 import { siteConfig } from "@/config/site";
-import Hero from "@/components/home/hero/Hero";
-import InfoSection from "@/components/home/info/InfoSection";
-import PerksSection from "@/components/home/perks/PerksSection";
-import ContactForm from "@/components/home/contact/ContactForm";
+import Hero from "@/components/hero/Hero";
+import InfoSection from "@/components/info/InfoSection";
+import PerksSection from "@/components/perks/PerksSection";
+import ContactForm from "@/components/contact/ContactForm";
 import Footer from "@/components/footer/FooterSection";
-import UnitsBanner from "@/components/home/units/UnitsBanner";
+import UnitsBanner from "@/components/units/UnitsBanner";
+import LocationSection from "@/components/location/LocationSection";
 
 
 const Home = () => {
@@ -14,6 +15,7 @@ const Home = () => {
             <UnitsBanner />
             <InfoSection />
             <PerksSection />
+            <LocationSection />
             <ContactForm />
             <Footer />
         </>

@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLock } from "@fortawesome/free-solid-svg-icons";
 import { faCameraAlt } from "@fortawesome/free-solid-svg-icons";
 import { faMapLocationDot } from "@fortawesome/free-solid-svg-icons";
-import tailwindCustomColors from "@/app/utils/tailwindConfigColors";
+import tailwindCustomColors from "@/utils/tailwindConfigColors";
 import React from "react";
 import PerkItem from "./PerkAccordionItem";
 import {
@@ -20,6 +20,7 @@ import {
 import {
     Accordion
 } from '@chakra-ui/react'
+import { Reveal } from "../reveal";
 
 
 

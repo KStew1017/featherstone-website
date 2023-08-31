@@ -80,7 +80,7 @@ const ContactForm = () => {
 
     return (
         <section id='contact' className="flex bg-light-grey h-fit relative">
-            <Reveal hiddenVariant="hiddenXNeg" visibleVariant="visibleXNeg" styling='max-w-[1250px] mx-auto my-[50px]' delay={0.2 + Math.random() * 0.4}>
+            <Reveal hiddenVariant="hiddenXNeg" visibleVariant="visibleXNeg" styling='max-w-[90%] lg:max-w-[1250px] mx-auto my-[50px]' delay={0.2 + Math.random() * 0.4}>
                 <h1 className="flex justify-center text-grey font-serif font-bold text-[36px] lg:text-[60px] mb-[25px]">Interested In Renting?</h1>
                 <Formik
                     initialValues={{ name: '', phone: '', message: '' }}
@@ -107,14 +107,14 @@ const ContactForm = () => {
                         <div className="flex-row lg:flex lg:gap-20 mb-[10px] lg:mb-[50px]">
                             <div className="flex-1 mb-[10px] lg:mb-0">
                                 <div className="flex flex-col">
-                                    <label htmlFor="name" className="text-grey text-[24px] font-sans">Name</label>
+                                    <label htmlFor="name" className="text-grey text-[20px] lg:text-[24px] font-sans">Name</label>
                                     <Field id="name" type="text" name="name" className="bg-white w-full rounded-3xl text-grey p-[10px] focus:border-none focus:outline-none focus:shadow-lg" />
                                     <ErrorMessage name="name" component={ErrorText} />
                                 </div>
                             </div>
                             <div className="flex-1">
                                 <div className="flex flex-col items-start">
-                                    <label htmlFor="phone" className="text-grey text-[24px] font-sans">Phone</label>
+                                    <label htmlFor="phone" className="text-grey text-[20px] lg:text-[24px] font-sans">Phone</label>
                                     <Field id="phone" type="tel" name="phone" className="bg-white w-full rounded-3xl text-grey p-[10px] focus:border-none focus:outline-none focus:shadow-lg" />
                                     <ErrorMessage name="phone" className="overflow-hidden" component={ErrorText} />
                                 </div>
@@ -122,7 +122,7 @@ const ContactForm = () => {
                         </div>
                         <div>
                             <div className="flex flex-col items-start mb-[25px]">
-                                <label htmlFor="message" className="text-grey text-[24px] font-sans">What will you use this warehouse space for?</label>
+                                <label htmlFor="message" className="text-grey text-[20px] lg:text-[24px] font-sans">What will you use this warehouse space for?</label>
                                 <Field id="message" as="textarea" name="message" className="bg-white w-full rounded-3xl max-h-[100px] text-grey p-[10px] focus:border-none focus:outline-none focus:shadow-lg" />
                                 <ErrorMessage name="message" component={ErrorText}  />
                             </div>

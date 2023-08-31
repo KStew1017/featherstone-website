@@ -1,5 +1,5 @@
 import { Text } from "@nextui-org/react"
-import tailwindCustomColors from "@/app/utils/tailwindConfigColors";
+import tailwindCustomColors from "@/utils/tailwindConfigColors";
 
 
 export const BrandContent1 = () => {

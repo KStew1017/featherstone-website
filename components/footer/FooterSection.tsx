@@ -9,28 +9,29 @@ import { Unit } from "@/types";
 
 interface FooterCardProps {
     units?: Unit[] | undefined;
+    styling?: string;
 }
 
-const Footer: React.FC<FooterCardProps> = ({ units }) => {
-    const unitsAvailable = (units && units.length === 0) ? "absolute bottom-0 w-full" : "relative bottom-0 w-full";
+const Footer: React.FC<FooterCardProps> = ({ units, styling }) => {
+    const unitsAvailable = (units && units.length === 0) ? "absolute bottom-0 w-full" : "";
 
     return (
-        <section className={`flex items-center bg-grey h-[250px] ${unitsAvailable}`}>
+        <section className={`flex items-center bg-grey h-[250px] ${unitsAvailable} ${styling}`}>
             <div className="grid max-w-[90%] mx-auto">
-                <div className="grid grid-cols-11 h-full items-center">
+                <div className="grid grid-cols-11 h-full ">
                     <FooterCard
                         header={<BrandTan />}
                         content1={<FooterCardContent.BrandContent1 />}
                         styling={"col-span-3 justify-self-start overflow-hidden"}
                     />
-                    <Card.Divider className="rotate-90" />
+                    <Card.Divider className="rotate-90 self-center" />
                     <FooterCard
                         header={<FooterCardContent.ContactUsHeader />}
                         content1={<FooterCardContent.ContactUsContent1 />}
                         content2={<FooterCardContent.ContactUsContent2 />}
                         styling={"col-start-5 col-span-3 overflow-hidden"}
                     />
-                    <Card.Divider className="rotate-90" />
+                    <Card.Divider className="rotate-90 self-center" />
                     <FooterCard
                         header={<FooterCardContent.HoursHeader />}
                         content1={<FooterCardContent.HoursContent1 />}

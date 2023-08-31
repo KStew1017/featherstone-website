@@ -1,9 +1,9 @@
 import { Text } from "@nextui-org/react"
-import tailwindCustomColors from "@/app/utils/tailwindConfigColors";
+import tailwindCustomColors from "@/utils/tailwindConfigColors";
 import { FC } from "react";
 
 
-export const titleStyling = "font-serif text-center text-[24px] ml-[20px]";
+export const titleStyling = "font-serif text-left text-[20px] ml-[20px]";
 export const contentStyling = "font-sans text-center text-[16px] mt-[20px] mb-[20px]";
 
 interface Props {

@@ -1,4 +1,4 @@
-import UnitsSection from "@/components/home/units/UnitsSection";
+import UnitsSection from "@/components/units/UnitsSection";
 import Footer from "@/components/footer/FooterSection";
 import prisma from "@/prisma/client"
 

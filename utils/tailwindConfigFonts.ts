@@ -1,4 +1,4 @@
-const tailwindConfig = require('../../tailwind.config.js');
+const tailwindConfig = require('../tailwind.config.js');
 
 const tailwindCustomFonts = {
     sans: tailwindConfig.theme.fontFamily.sans,

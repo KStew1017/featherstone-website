@@ -20,7 +20,7 @@ const FooterCard: FC<Props> = ({ header, content1, content2, styling }) => {
             }}
         >
             <Card.Header>
-                <span className='font-serif font-bold text-[20px] md:text-[24px] lg:text-[32px] mx-auto text-tan-100'>
+                <span className='font-serif font-bold text-[16px] md:text-[24px] lg:text-[32px] mx-auto text-tan-100'>
                     {header}
                 </span>
             </Card.Header>

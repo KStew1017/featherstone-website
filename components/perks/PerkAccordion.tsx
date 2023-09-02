@@ -20,8 +20,6 @@ import {
 import {
     Accordion
 } from '@chakra-ui/react'
-import { Reveal } from "../reveal";
-
 
 
 const PerkAccordion = () => {

@@ -15,7 +15,6 @@ const Hero: FC<Props> = ({ title }) => {
     const { scrollY } = useScroll();
     const y = useTransform(scrollY, [0, 1000], [0, 450]);
     const scale = useTransform(scrollY, [0, 1000], [1, 1.1]);
-    const opacity = useTransform(scrollY, [0, 1000], [1, 0.5]);
     const currentPath = usePathname();
 
     const isHomePage: ReactNode = (currentPath === "/") ? <MissionStatement /> : null;
@@ -25,7 +24,7 @@ const Hero: FC<Props> = ({ title }) => {
 
     return (
         <section className={`flex flex-col ${isHomePageHeight} relative overflow-hidden`}>
-            <motion.div className="absolute inset-0 bg-[url(../public/sheet-metal.jpg)] bg-center bg-cover bg-blend-overlay bg-black/20" style={{ y, scale, opacity }} />
+            <motion.div className="absolute inset-0 bg-[url(../public/temp-hero.jpg)] bg-center bg-cover bg-blend-overlay bg-black/20" style={{ y, scale }} />
             <div className="flex-1 flex items-center p-0">
                 <div className={`${isLocationPageWidth} text-center mx-auto`}>
                     <Reveal hiddenVariant="hiddenY" visibleVariant="visibleY">

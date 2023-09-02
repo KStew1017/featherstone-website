@@ -16,21 +16,28 @@ import React from "react";
 import Link from "next/link";
 import { motion, useScroll } from "framer-motion";
 import '../styles/style.css'
+import { useState } from "react";
+import { useMotionValueEvent } from "framer-motion";
 
 
 export const Navbar = () => {
-    const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const router = useRouter();
     const currentPath = usePathname();
 
+    const [isScrolled, setIsScrolled] = useState("bg-grey/100");
     const { scrollYProgress } = useScroll();
+
+    useMotionValueEvent(scrollYProgress, "change", (latest) => {
+        setIsScrolled(latest > 0 ? "bg-grey/75 backdrop-filter" : "bg-grey/100");
+    });
 
     return (
         <>
             <NextUINavbar
                 maxWidth="xl"
-                className="bg-grey/75 z-50 backdrop-blur-md backdrop-filter fixed h-[100px] lg:h-[100px] overflow-hidden"
+                className={`z-50 ${isScrolled} fixed h-[100px] lg:h-[100px] overflow-hidden transition`}
                 isMenuOpen={isMenuOpen}
                 onMenuOpenChange={() => setIsMenuOpen(!isMenuOpen)}
                 classNames={{
@@ -80,7 +87,7 @@ export const Navbar = () => {
                             >
                                 <Link
                                     className="text-tan-100 text-[20px] hover:drop-shadow-light transition ease-s-curve font-serif font-bold"
-                                    href={item.href === '#contact' ? '/#contact' : item.href}
+                                    href={item.href === '#contact' ? '/#contact' : item.href === '#location' ? '/#location' : item.href}
                                 >
                                     {item.label}
                                 </Link>

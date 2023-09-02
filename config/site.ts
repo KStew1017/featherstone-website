@@ -14,7 +14,7 @@ export const siteConfig = {
         },
         {
             label: "Location",
-            href: "/location",
+            href: "#location",
         },
         {
             label: "Contact",
@@ -32,7 +32,7 @@ export const siteConfig = {
         },
         {
             label: "Location",
-            href: "/location",
+            href: "#location",
         },
         {
             label: "Contact",

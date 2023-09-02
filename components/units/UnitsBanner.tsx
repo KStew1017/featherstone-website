@@ -38,7 +38,7 @@ const UnitsBanner = () => {
                     {availableUnits.map((unit, index) => (
                         <React.Fragment key={index}>
                             {unit}{' '}
-                            <a href='/units' className='flex'><button type='button' className='bg-gold mx-[20px] rounded-full lg:text-[20px] text-[14px] px-[20px]'>
+                            <a href='/units' className='flex'><button type='button' className='bg-gold text-grey mx-[20px] rounded-full lg:text-[20px] text-[14px] px-[20px]'>
                                 click me!
                             </button></a>{' '}
                         </React.Fragment>

@@ -1,8 +1,11 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { Reveal } from '@/components/reveal';
+import FormModal from './FormModal';
+import { useDisclosure } from '@chakra-ui/react';
+
 
 
 interface ErrorTextProps {
@@ -22,37 +25,30 @@ const ContactForm = () => {
         <div className="text-red-700 text-[14px]">{children}</div>
     );
 
+    const { isOpen, onOpen, onClose } = useDisclosure();
     const [loading, setLoading] = useState(false);
     const [success, setSuccess] = useState(false);
+    const [timeRemaining, setTimeRemaining] = useState(0);
 
-    const handleCookie = () => {
-        if (document.cookie.includes("formSubmissions=")) {
-            const cookieValue: string | undefined = document.cookie
-                .split("; ")
-                .find((row: string) => row.startsWith("formSubmissions="))
-                ?.split("=")[1];
-      
-            const submissionCount: number = parseInt(cookieValue || "0");
-      
-            if (submissionCount >= 3) {
-                alert("You have reached the maximum number of submissions.");
-                return false;
-            }
-
-            const newSubmissionCount: number = submissionCount + 1;
-        
-            document.cookie = `formSubmissions=${newSubmissionCount}`;
-        } else {
-            document.cookie = "formSubmissions=1";
-        }
-        return true;
-    }
-
+    const FORM_SUBMITTED_KEY = 'formSubmitted';
+    const LAST_SUBMISSION_TIME_KEY = 'lastSubmissionTime';
+    
     const handleSubmit = async (values: values) => {
-        if (!handleCookie()) {
-            return;
-        };
-
+        const formSubmitted = Number(localStorage.getItem(FORM_SUBMITTED_KEY)) || 0;
+        const lastSubmissionTime = Number(localStorage.getItem(LAST_SUBMISSION_TIME_KEY)) || 0;
+        const twelveHoursInMs = 12 * 60 * 60 * 1000;
+        
+        if (formSubmitted >= 2) {
+            if (Date.now() - lastSubmissionTime >= twelveHoursInMs) {
+                localStorage.setItem(FORM_SUBMITTED_KEY, '1');
+                localStorage.setItem(LAST_SUBMISSION_TIME_KEY, Date.now().toString());
+            } else {
+                setSuccess(false);
+                setTimeRemaining(twelveHoursInMs - (Date.now() - lastSubmissionTime));
+                return;
+            }
+        }
+        
         try {
             setLoading(true);
             const response = await fetch('/api/contact', {
@@ -63,20 +59,29 @@ const ContactForm = () => {
                 body: JSON.stringify(values)
             });
             const data = await response.json();
-            
+    
             if (data) {
+                localStorage.setItem(FORM_SUBMITTED_KEY, (formSubmitted + 1).toString());
+                setLoading(false);
                 setSuccess(true);
-                alert("Thank you for your interest! We will be in touch soon.");
-                console.log(success)
             } else {
                 setSuccess(false);
             };
         } catch (err) {
             console.log(err);
-        } finally {
-            setLoading(false);
-        };
+        }
     };
+
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+          const lastSubmissionTime = Number(localStorage.getItem(LAST_SUBMISSION_TIME_KEY)) || 0;
+          const twelveHoursInMs = 12 * 60 * 60 * 1000;
+          const timeRemaining = twelveHoursInMs - (Date.now() - lastSubmissionTime);
+          setTimeRemaining(timeRemaining > 0 ? timeRemaining : 0);
+        }, 1000);
+    
+        return () => clearInterval(intervalId);
+    }, []);
 
     return (
         <section id='contact' className="flex bg-light-grey h-fit relative">
@@ -129,13 +134,14 @@ const ContactForm = () => {
                         </div>
                         <div>
                             <div className="flex flex-col items-end ">
-                                <button id="submit" type="submit" disabled={loading} className="bg-gold/75 shadow-none hover:drop-shadow-lg hover:bg-gold transition ease-s-curve h-[50px] w-[180px] text-[24px] rounded-full">
+                                <button id="submit" type="submit" disabled={loading} onClick={onOpen} className="bg-gold/75 shadow-none hover:drop-shadow-lg hover:bg-gold transition ease-s-curve h-[50px] w-[180px] text-[24px] rounded-full">
                                     SUBMIT
                                 </button>
                             </div>
                         </div>
                     </Form>
                 </Formik>
+                <FormModal isOpen={isOpen} onClose={onClose} success={success} loading={loading} timeRemaining={timeRemaining} />
             </Reveal>
         </section>
     )

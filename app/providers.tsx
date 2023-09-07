@@ -6,6 +6,7 @@ import { ThemeProvider as NextThemesProvider } from "next-themes";
 import { ThemeProviderProps } from "next-themes/dist/types";
 import { ChakraProvider } from "@chakra-ui/react";
 import { CacheProvider } from "@chakra-ui/next-js"
+import chakraThemes from "@/utils/chakraThemes";
 
 
 export interface ProvidersProps {
@@ -18,7 +19,7 @@ export function Providers({ children, themeProps }: ProvidersProps) {
         <NextUIProvider>
             <NextThemesProvider {...themeProps}>
                 <CacheProvider>
-                    <ChakraProvider>
+                    <ChakraProvider theme={chakraThemes}>
                         {children}
                     </ChakraProvider>
                 </CacheProvider>

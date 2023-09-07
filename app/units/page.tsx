@@ -6,7 +6,7 @@ import prisma from "@/prisma/client"
 const UnitsPage = async () => {
     const units = await prisma.units.findMany({
         where: {
-            occupied: true
+            occupied: false
         }
     });
 

@@ -18,8 +18,8 @@ export const metadata: Metadata = {
     ],
     icons: {
         icon: "/feather-logo.png",
-        shortcut: "/favicon-16x16.png",
-        apple: "/apple-touch-icon.png",
+        shortcut: "/feather-logo.png",
+        apple: "/feather-logo.png",
     },
 };
 

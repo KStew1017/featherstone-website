@@ -9,8 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@chakra-ui/anatomy": "^2.2.0",
     "@chakra-ui/next-js": "^2.1.5",
     "@chakra-ui/react": "^2.8.0",
+    "@chakra-ui/styled-system": "^2.9.1",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
@@ -23,6 +25,7 @@
     "@nextui-org/input": "^0.0.0-dev-v2-20230714000855",
     "@nextui-org/kbd": "^0.0.0-dev-v2-20230714000855",
     "@nextui-org/link": "^0.0.0-dev-v2-20230714000855",
+    "@nextui-org/modal": "^2.0.20",
     "@nextui-org/navbar": "^0.0.0-dev-v2-20230714000855",
     "@nextui-org/react": "^1.0.0-beta.13",
     "@nextui-org/snippet": "^0.0.0-dev-v2-20230714000855",

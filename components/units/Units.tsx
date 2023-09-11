@@ -35,7 +35,7 @@ const Units = ({ units }: { units: Unit[] }) => {
         return (
             <>
                 {units.map((unit) => (
-                    <Reveal hiddenVariant="hiddenY" visibleVariant="visibleY" delay={0.2 + Math.random() * 0.4}>
+                    <Reveal key={unit.number.toString()} hiddenVariant="hiddenY" visibleVariant="visibleY" delay={0.2 + Math.random() * 0.4}>
                         <div className="md:mx-[25px] col-span-1 bg-tan-200 h-fit rounded-[50px] justify-center lg:hover:translate-y-[-15px] lg:hover:scale-105 lg:hover:drop-shadow-2xl transition-all ease-s-curve" key={unit.number.toString()}>
                             <div className="flex flex-col items-center py-[25px]">
                                 <h1 className="text-grey font-serif font-bold text-[50px] lg:text-[54px] mx-auto">{getUnitNumber(unit)}</h1>

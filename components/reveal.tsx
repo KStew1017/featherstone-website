@@ -16,12 +16,11 @@ interface Props {
 export const Reveal = ({ children, hiddenVariant, visibleVariant="none", styling, delay, isMobile}: Props) => {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true });
-
     const controls = useAnimation();
 
     useEffect(() => {
         if (isInView) controls.start(visibleVariant);
-    }, [isInView]);
+    }, [isInView, controls, visibleVariant]);
 
     return (
         <div 

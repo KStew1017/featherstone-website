@@ -14,8 +14,8 @@ const AboutUsImage: FC<AboutUsCardProps> = ({ imageSrc, imageAlt }) => {
                 src={imageSrc}
                 alt={imageAlt}
                 fill
-                objectFit="cover"
-                className="lg:rounded-[50px] rounded-t-[25px]"
+                sizes='(max-width: 1023px) 100vw, 50vw'
+                className="lg:rounded-[50px] rounded-t-[25px] object-cover"
             />
         </div>
     )

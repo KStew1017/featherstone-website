@@ -28,7 +28,7 @@ const PerkCard: FC<Props> = ({ styling, icon, title, content }) => {
                 </div>
             </Card.Header>
             <Card.Header>
-                <span className='font-serif font-bold text-[20px] mx-auto text-tan-100'>
+                <span className='font-serif font-bold text-center text-[20px] mx-auto text-tan-100'>
                     {title}
                 </span>
             </Card.Header>

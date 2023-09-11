@@ -16,7 +16,7 @@ const UnitsBanner = () => {
 
         if (typeof window !== 'undefined') {
             setNumUnits(Math.floor(window.innerWidth * 0.01));
-            window.addEventListener('resize', handleResize);
+            window.addEventListener('resize', handleResize, { passive: true });
         }
 
         return () => {

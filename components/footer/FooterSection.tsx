@@ -22,7 +22,7 @@ const Footer: React.FC<FooterCardProps> = ({ units, styling }) => {
                     <FooterCard
                         header={<BrandTan />}
                         content1={<FooterCardContent.BrandContent1 />}
-                        styling={"col-span-3 justify-self-start overflow-hidden"}
+                        styling={"col-span-3 justify-self-start overflow-hidden h-auto w-auto"}
                     />
                     <Card.Divider className="rotate-90 self-center" />
                     <FooterCard

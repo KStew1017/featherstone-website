@@ -13,9 +13,9 @@ const HassleFreeImage: FC<HassleFreeCardProps> = ({ imageSrc, imageAlt }) => {
             <Image
                 src={imageSrc}
                 alt={imageAlt}
-                layout="fill"
-                objectFit="cover"
-                className="lg:rounded-[50px] rounded-t-[25px]"
+                fill
+                sizes='(max-width: 1023px) 100vw, 50vw'
+                className="lg:rounded-[50px] rounded-t-[25px] object-cover"
             />
         </div>
     )

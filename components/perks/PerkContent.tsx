@@ -3,8 +3,8 @@ import tailwindCustomColors from "@/utils/tailwindConfigColors";
 import { FC } from "react";
 
 
-export const titleStyling = "font-serif text-left text-[20px] ml-[20px]";
-export const contentStyling = "font-sans text-center text-[16px] mt-[20px] mb-[20px]";
+export const titleStyling = "font-serif text-center text-[20px] ml-[20px] lg:ml-[0px]";
+export const contentStyling = "font-sans text-center lg:text-[16px] mt-[20px] mb-[20px]";
 
 interface Props {
     styling: string;

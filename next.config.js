@@ -4,7 +4,7 @@ const nextConfig = {
     compiler: {
         styledComponents: true
     },
-    distDir: 'dist',
+    distDir: 'build',
     images: {
         unoptimized: true
     },

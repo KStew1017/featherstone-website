@@ -19,7 +19,7 @@ const LocationCard = () => {
                 <Link href="https://www.google.com/maps/place/Featherstone+Business+Park/@32.9495606,-97.4158866,142m/data=!3m1!1e3!4m6!3m5!1s0x864ddd5274925bbb:0x296df6472eeaeef2!8m2!3d32.9496103!4d-97.415916!16s%2Fg%2F11v0ymt6lm?entry=ttu" target='_blank' className='items-center flex hover:underline mx-auto lg:mx-0'>{mapIcon} <span className='ml-[10px] lg:ml-[20px]'>2649 Blue Mound Rd W, Haslet, TX 76052</span></Link>
             </p>
             <p className="text-grey font-sans text-[16px] md:text-[18px] lg:text-[20px] mt-[25px] items-center flex">
-                <Link href="tel:817-503-6579" target='_blank' className='items-center flex hover:underline mx-auto lg:mx-0'>{phoneIcon} <span className='ml-[10px] lg:ml-[20px]'>817 - 503 - 6579</span></Link>
+                <Link href="tel:817-503-6579" target='_blank' className='items-center flex hover:underline mx-auto lg:mx-0'>{phoneIcon} <span className='ml-[10px] lg:ml-[20px]'>817 - 903 - 6579</span></Link>
             </p>
         </div>
     );

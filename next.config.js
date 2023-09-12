@@ -4,7 +4,7 @@ const nextConfig = {
     compiler: {
         styledComponents: true
     },
-    output: 'export',
+    // output: 'export',
     distDir: 'dist',
 }
 

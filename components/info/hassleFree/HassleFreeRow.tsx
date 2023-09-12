@@ -7,7 +7,7 @@ import { HassleFreeCard } from "./HassleFreeCard";
 
 
 interface HassleFreeCardProps {
-    imageSrc: string;
+    imageSrc: string | any;
     imageAlt: string;
     title: string;
 };

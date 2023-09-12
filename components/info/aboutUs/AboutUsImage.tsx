@@ -3,7 +3,7 @@ import { FC } from 'react'
 
 
 type AboutUsCardProps = {
-    imageSrc: string;
+    imageSrc: string | any;
     imageAlt: string;
 };
 

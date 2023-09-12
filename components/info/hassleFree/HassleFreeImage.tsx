@@ -3,7 +3,7 @@ import { FC } from 'react'
 
 
 type HassleFreeCardProps = {
-    imageSrc: string;
+    imageSrc: string | any;
     imageAlt: string;
 };
 

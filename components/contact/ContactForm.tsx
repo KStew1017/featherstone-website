@@ -59,6 +59,8 @@ const ContactForm = () => {
                 body: JSON.stringify(values)
             });
             const data = await response.json();
+
+            alert(JSON.stringify(data));
     
             if (data) {
                 localStorage.setItem(FORM_SUBMITTED_KEY, (formSubmitted + 1).toString());

@@ -12,11 +12,13 @@ export async function POST(req: NextRequest, res: NextResponse) {
             }
         });
       
+        console.log("API hit")
+        console.log("Contact created successfully");
         console.log(contact);
-      
         return NextResponse.json({ status: "success", data: contact });
     } catch (error) {
         console.log(error);
+        console.log("Error creating contact");
         return NextResponse.json({ status: "error", message: error });
     }
 }

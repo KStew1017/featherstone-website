@@ -2,7 +2,6 @@
 
 import HassleFreeRow from "./hassleFree/HassleFreeRow";
 import AboutUsRow from "./aboutUs/AboutUsRow";
-import image from "@/public/temp-hero.jpg";
 
 
 const InfoSection = () => {
@@ -10,12 +9,10 @@ const InfoSection = () => {
         <section className="bg-tan-100 z-20 relative">
             <div className="grid gap-y-[50px] grid-rows-2 w-[90%] lg:max-w-[1250px] items-center mx-auto pb-[50px] pt-[50px] lg:pb-[0px] lg:pt-[0px]">
                 <AboutUsRow
-                    imageSrc={image}
                     imageAlt="temp"
                     title="About Us"
                 />
                 <HassleFreeRow 
-                    imageSrc={image}
                     imageAlt="temp"
                     title="Hassle-Free Renting"
                 />

@@ -7,25 +7,22 @@ import { HassleFreeCard } from "./HassleFreeCard";
 
 
 interface HassleFreeCardProps {
-    imageSrc: string | any;
     imageAlt: string;
     title: string;
 };
 
-const HassleFreeRow: FC<HassleFreeCardProps> = ({ imageSrc, imageAlt, title }) => {
+const HassleFreeRow: FC<HassleFreeCardProps> = ({ imageAlt, title }) => {
     return(
         <Reveal hiddenVariant="hiddenY" visibleVariant="visibleY" delay={0.2 + Math.random() * 0.4}>
             <div className="hidden lg:grid grid-cols-10 items-center lg:mb-[125px]">
                 <HassleFreeCard title={title} />
                 <HassleFreeImage
-                    imageSrc={imageSrc}
                     imageAlt={imageAlt}
                 />
             </div>
 
             <div className="lg:hidden grid grid-rows-auto grid-cols-10 items-center">
                 <HassleFreeImage
-                    imageSrc={imageSrc}
                     imageAlt={imageAlt}
                 />
                 <div className="col-span-full">

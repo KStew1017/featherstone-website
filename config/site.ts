@@ -3,6 +3,9 @@ export type SiteConfig = typeof siteConfig;
 export const siteConfig = {
     name: "Featherstone Business Park",
     description: "Versatile commercial spaces tailored to fit your needs in secure and accessible warehouses.",
+    images: {
+        tempBG: "/../public/temp-hero.jpg",
+    },
     navItems: [
         {
             label: "Home",

@@ -1,17 +1,17 @@
 import Image from 'next/image'
 import { FC } from 'react'
-import image from '@/public/temp-hero.jpg'
 
 
-interface AboutUsCardProps {
+type AboutUsCardProps = {
+    imageSrc: string;
     imageAlt: string;
 };
 
-const AboutUsImage: FC<AboutUsCardProps> = ({ imageAlt }) => {
+const AboutUsImage: FC<AboutUsCardProps> = ({ imageSrc, imageAlt }) => {
     return (
         <div className="col-span-full lg:col-span-4 relative w-full h-[200px] lg:h-[90%]">
             <Image
-                src={image}
+                src={imageSrc}
                 alt={imageAlt}
                 fill
                 sizes='(max-width: 1023px) 100vw, 50vw'

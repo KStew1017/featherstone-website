@@ -1,17 +1,17 @@
 import Image from 'next/image'
 import { FC } from 'react'
-import image from '@/public/temp-hero.jpg'
 
 
-interface HassleFreeCardProps {
+type HassleFreeCardProps = {
+    imageSrc: string;
     imageAlt: string;
 };
 
-const HassleFreeImage: FC<HassleFreeCardProps> = ({ imageAlt }) => {
+const HassleFreeImage: FC<HassleFreeCardProps> = ({ imageSrc, imageAlt }) => {
     return (
         <div className="col-span-full lg:col-end-11 lg:col-span-4 relative w-full h-[200px] lg:h-[90%]">
             <Image
-                src={image}
+                src={imageSrc}
                 alt={imageAlt}
                 fill
                 sizes='(max-width: 1023px) 100vw, 50vw'

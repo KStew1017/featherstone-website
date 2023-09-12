@@ -16,7 +16,7 @@ const Footer: React.FC<FooterCardProps> = ({ units, styling }) => {
     const unitsAvailable = (units && units.length === 0) ? "absolute bottom-0 w-full" : "";
 
     return (
-        <section className={`flex items-center bg-grey h-[250px] ${unitsAvailable} ${styling}`}>
+        <section className={`flex items-center bg-grey h-fit py-[25px] ${unitsAvailable} ${styling}`}>
             <div className="grid max-w-[90%] mx-auto">
                 <div className="grid grid-cols-11 h-full ">
                     <FooterCard
@@ -36,7 +36,7 @@ const Footer: React.FC<FooterCardProps> = ({ units, styling }) => {
                         header={<FooterCardContent.HoursHeader />}
                         content1={<FooterCardContent.HoursContent1 />}
                         content2={<FooterCardContent.HoursContent2 />}
-                        styling={"col-start-9 col-span-3 overflow"}
+                        styling={"col-start-9 col-span-3 overflow-hidden"}
                     />
                 </div>
             </div>

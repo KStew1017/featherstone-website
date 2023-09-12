@@ -4,7 +4,7 @@ import { Reveal } from "@/components/reveal"
 
 export default function MissionStatement() {
     return (
-        <section className="flex flex-col min-h-[20%] bg-tan-100 z-10">
+        <section className="flex flex-col bg-tan-100 z-10">
             <div className="flex gap-[90px] justify-center sm:max-w-[90%] lg:max-w-[90%] mx-auto items-center sm:pt-[35px] lg:pb-[35px]">
                 <div className="hidden lg:flex">
                     <Reveal hiddenVariant="hiddenXNeg" visibleVariant="visibleXNeg" delay={0.5}>

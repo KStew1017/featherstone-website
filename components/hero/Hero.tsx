@@ -18,12 +18,11 @@ const Hero: FC<Props> = ({ title }) => {
     const currentPath = usePathname();
 
     const isHomePage: ReactNode = (currentPath === "/") ? <MissionStatement /> : null;
-    const isHomePageHeight: string = (currentPath === "/") ? "min-h-screen" : "min-h-[400px]";
     const isLocationPageMargin: string = (currentPath === "/location") ? "translate-y-[40px]" : "";
     const isLocationPageWidth: string = (currentPath === "/location") ? "max-w-[75%]" : "max-w-2xl";
 
     return (
-        <section className={`flex flex-col ${isHomePageHeight} relative overflow-hidden`}>
+        <section className={`flex flex-col h-screen relative overflow-hidden`}>
             <motion.div className="absolute inset-0 bg-[url(../public/temp-hero.jpg)] bg-center bg-cover bg-blend-overlay bg-black/20" style={{ y, scale }} />
             <div className="flex-1 flex items-center p-0">
                 <div className={`${isLocationPageWidth} text-center mx-auto`}>

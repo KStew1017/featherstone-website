@@ -7,8 +7,8 @@ export const BrandContent1 = () => {
     let year: number = now.getFullYear();
 
     return (
-        <div className="justify-self-start text-left text-[12px]">
-            <Text color={tailwindCustomColors.tan100}>
+        <div className="justify-self-start text-left text-[10px] lg:text-[12px]">
+            <Text color={tailwindCustomColors.tan100} className="pb-[10px] lg:pb-0">
                 © {year} Featherstone Business Park.
             </Text>
             <Text color={tailwindCustomColors.tan100}>

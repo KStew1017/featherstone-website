@@ -18,6 +18,7 @@ import { motion, useScroll } from "framer-motion";
 import '../styles/style.css'
 import { useState } from "react";
 import { useMotionValueEvent } from "framer-motion";
+import { UserButton } from "@clerk/nextjs";
 
 
 export const Navbar = () => {
@@ -79,7 +80,7 @@ export const Navbar = () => {
                     className="hidden sm:flex basis-1/5 sm:basis-full"
                     justify="end"
                 >
-                    <ul className="hidden lg:flex gap-[65px] ml-2">
+                    <ul className="hidden lg:flex gap-[65px] ml-2 items-center">
                         {siteConfig.navItems.map((item) => (
                             <NavbarItem
                                 key={item.href}
@@ -93,6 +94,12 @@ export const Navbar = () => {
                                 </Link>
                             </NavbarItem>
                         ))}
+                        <NavbarItem
+                            key={"user"}
+                            isActive={false}
+                        >
+                            <UserButton afterSignOutUrl="/" />
+                        </NavbarItem>
                     </ul>
                 </NavbarContent>
 

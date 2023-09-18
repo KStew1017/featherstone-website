@@ -37,7 +37,8 @@
     "tailwind.config.js",
     "postcss.config.js",
     "next.config.js",
-    "dist/types/**/*.ts"
+    "dist/types/**/*.ts",
+    "build/types/**/*.ts",
   ],
   "exclude": [
     "node_modules"

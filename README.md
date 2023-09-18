@@ -1,19 +1,16 @@
-# Next.js & NextUI Template
+# Featherstone Business Park Website
 
-This is a template for creating applications using Next.js 13 (app directory) and NextUI (v2).
+---
 
 ## Technologies Used
 
+- [TypeScript](https://www.typescriptlang.org/)
 - [Next.js 13](https://nextjs.org/docs/getting-started)
 - [NextUI v2](https://nextui-docs-v2.vercel.app/)
 - [Tailwind CSS](https://tailwindcss.com/)
-- [Tailwind Variants](https://tailwind-variants.org)
-- [TypeScript](https://www.typescriptlang.org/)
 - [Framer Motion](https://www.framer.com/motion/)
-- [next-themes](https://github.com/pacocoursey/next-themes)
-
-## How to Use
-
+- [ChakraUI](https://chakra-ui.com/)
+- [Prisma](https://www.prisma.io/)
 
 ### Use the template with create-next-app
 

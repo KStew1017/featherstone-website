@@ -68,6 +68,7 @@ const Dashboard = ({ units, tenants }: { units: Unit[], tenants: Tenant[] }) => 
                         {siteConfig.dashboardNavItems.map((item) => (
                             <Tab
                                 className={`text-grey ui-not-selected:text-[20px] ui-selected:text-[20px] font-sans font-bold hover:border-gold hover:text-gold ui-selected:text-gold ui-selected:border-gold ui-selected:border-b-3 transition ease-s-curve duration-1000`}
+                                key={item.label}
                             >
                                 {item.label}
                             </Tab>

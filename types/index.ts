@@ -6,5 +6,16 @@ export type Unit = {
     bathroom: boolean;
     office: boolean;
     occupied: boolean;
+    tenant: {} | null;
     tenant_id: number | null;
+}
+
+export type Tenant = {
+    id: number;
+    first_name: string;
+    last_name: string;
+    email: string | null;
+    phone: string | null;
+    business_name: string | null;
+    unit: Unit[];
 }

@@ -48,7 +48,7 @@ module.exports = {
                     },
                     content: {
                         subtle: "#9ca3af", // gray-400
-                        DEFAULT: "#6b7280", // gray-500
+                        DEFAULT: "#455353", // gray-500
                         emphasis: "#374151", // gray-700
                         strong: "#111827", // gray-900
                         inverted: "#ffffff", // white
@@ -103,6 +103,7 @@ module.exports = {
             borderRadius: {
                 "tremor-small": "0.375rem",
                 "tremor-default": "0.5rem",
+                "tremor-large": "50px",
                 "tremor-full": "9999px",
             },
             fontSize: {
@@ -149,6 +150,7 @@ module.exports = {
         },
     ],
     darkMode: "class",
+    important: true,
     plugins: [
         nextui(),
         require("@headlessui/tailwindcss")

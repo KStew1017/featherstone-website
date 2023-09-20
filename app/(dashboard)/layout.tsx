@@ -4,7 +4,6 @@ import { siteConfig } from "@/config/site";
 import { Metadata } from "next";
 import { jost, ptserif, northwell, northwellSwash } from "@/utils/fonts";
 import { ClerkProvider } from "@clerk/nextjs";
-import DashboardNavbar from "@/components/dashboardNavbar";
 
 
 export const metadata: Metadata = {
@@ -29,7 +28,6 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
                     <Providers>
                         <div className="relative flex flex-col h-screen items-center">
                             <div className="w-[90%] lg:max-w-[1250px]">
-                                <DashboardNavbar />
                                 {children}
                             </div>
                         </div>

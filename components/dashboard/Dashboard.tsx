@@ -1,33 +1,40 @@
 "use client";
 
 import {
-    Card,
-    Grid,
     Tab,
     TabList,
     TabGroup,
     TabPanel,
     TabPanels,
 } from "@tremor/react";
-import '../styles/style.css';
 import { BrandDark } from "@/components/icons";
 import { siteConfig } from "@/config/site";
 import { UserButton } from "@clerk/nextjs";
 import { useUser } from "@clerk/nextjs";
+import { ReactNode } from "react";
+import { Unit, Tenant } from "@/types";
+
+import UnitsTab from "./UnitsTab";
+import TenantsTab from "./TenantsTab";
 
 
-const DashboardNavbar = () => {
+const Dashboard = ({ units, tenants }: { units: Unit[], tenants: Tenant[] }) => {
     const { user } = useUser();
-    const admin = user?.publicMetadata.role
+    const admin = user?.publicMetadata.role;
 
     return (
         <main className="p-12">
             <div className="flex items-center justify-between">
                 <BrandDark />
                 <div className="flex items-center">
-                    <p className="text-grey text-[24px] mr-2 font-sans font-bold">
-                        <span className="text-[12px] text-grey/50 mr-2">signed in as </span>{user?.username}
-                    </p>
+                    <div className="flex flex-col">
+                        <p className="text-grey text-[24px] mr-4 font-sans font-bold">
+                            <span className="text-[12px] text-grey/50 mr-2">signed in as </span>{user?.username}
+                        </p>
+                        <p className="text-grey/50 text-[12px] mr-4 font-sans font-bold text-end">
+                            ({admin as ReactNode})
+                        </p>
+                    </div>
                     <UserButton
                         afterSignOutUrl="/"
                         appearance={{
@@ -36,6 +43,20 @@ const DashboardNavbar = () => {
                                     "focus:shadow-none",
                                 userButtonAvatarBox:
                                     "w-[50px] h-[50px] rounded-full border-2 border-gold transition ease-s-curve hover:drop-shadow-lg hover:scale-105 hover:translate-y-[-2px]",
+                                userButtonPopoverCard:
+                                    "bg-tan-100 border-2 border-gold font-sans",
+                                userPreviewMainIdentifier:
+                                    "text-grey text-[18px] font-bold",
+                                userPreviewSecondaryIdentifier:
+                                    "text-grey/50",
+                                userButtonPopoverActionButton:
+                                    "hover:bg-tan-200",
+                                userButtonPopoverActionButtonText:
+                                    "text-[16px]",
+                                userButtonPopoverActionButtonIcon:
+                                    "w-[20px] h-[20px]",
+                                userButtonPopoverFooter:
+                                    "hidden"
                             }
                         }}
                     />
@@ -55,19 +76,12 @@ const DashboardNavbar = () => {
                 </TabList>
                 <TabPanels>
                     <TabPanel>
-                        <Grid numItemsMd={2} numItemsLg={2} className="gap-6 mt-6">
-                            <Card>
-                                <div className="h-28" />
-                            </Card>
-                            <Card>
-                                <div className="h-28" />
-                            </Card>
-                        </Grid>
-                        <div className="mt-6">
-                            <Card>
-                                <div className="h-80" />
-                            </Card>
-                        </div>
+                    </TabPanel>
+                    <TabPanel>
+                        <UnitsTab units={units} />
+                    </TabPanel>
+                    <TabPanel>
+                        <TenantsTab tenants={tenants} />
                     </TabPanel>
                 </TabPanels>
             </TabGroup>
@@ -75,4 +89,4 @@ const DashboardNavbar = () => {
       );
 };
 
-export default DashboardNavbar;
+export default Dashboard;

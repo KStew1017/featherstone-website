@@ -4,15 +4,8 @@
 import { Reveal } from "@/components/reveal";
 import { Divider } from "@chakra-ui/react";
 import Link from "next/link";
+import { Unit } from "@/types";
 
-
-interface Unit {
-    number: number[];
-    square_feet: number;
-    occupied: boolean;
-    office: boolean;
-    bathroom: boolean;
-}
 
 const Units = ({ units }: { units: Unit[] }) => {
     const getUnitNumber = (unit: Unit) => {

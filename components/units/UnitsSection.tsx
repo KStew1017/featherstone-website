@@ -3,11 +3,7 @@ import { Reveal } from "@/components/reveal";
 import { Unit } from "@/types";
 
 
-interface UnitsSectionProps {
-    units: Unit[];
-}
-
-const UnitsSection: React.FC<UnitsSectionProps> = ({ units }) => {
+const UnitsSection = ({ units }: any) => {
     return (
         <section className={`grid gap-y-[50px] lg:gap-y-[100px] grid-rows-[${units.length}] w-[90%] lg:max-w-[1250px] items-center mx-auto mb-[100px] mt-[175px] lg:mb-[100px] lg:mt-[175px]`}>
             <Reveal hiddenVariant="hiddenXNeg" visibleVariant="visibleXNeg" styling="mx-auto" delay={0.2 + Math.random() * 0.4}>

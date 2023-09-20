@@ -4,15 +4,10 @@ import FooterCard from "./FooterCard";
 import * as FooterCardContent from "./FooterContent";
 import { BrandTan } from "@/components/icons";
 import { Card } from "@nextui-org/react";
-import { Unit } from "@/types";
 
 
-interface FooterCardProps {
-    units?: Unit[] | undefined;
-    styling?: string;
-}
 
-const Footer: React.FC<FooterCardProps> = ({ units, styling }) => {
+const Footer = ({ units, styling }: { units?: any, styling?: string}) => {
     const unitsAvailable = (units && units.length === 0) ? "absolute bottom-0 w-full" : "";
 
     return (

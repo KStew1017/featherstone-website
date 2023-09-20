@@ -27,6 +27,16 @@ export const BrandTan: React.FC<IconSvgProps> = ({
     </>
 );
 
+export const BrandDark: React.FC<IconSvgProps> = ({
+    width,
+    height,
+    ...props
+}) => (
+    <>
+        <Image src="/brand-dark.svg" alt="Featherstone Brand" width={300} height={100} priority={true} />
+    </>
+);
+
 export const LogoStrokeIn: React.FC<IconSvgProps> = ({
     width,
     height,

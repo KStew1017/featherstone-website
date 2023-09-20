@@ -42,4 +42,36 @@ export const siteConfig = {
             href: "#contact",
         }
     ],
+    dashboardNavItems: [
+        {
+            label: "Overview",
+            href: "/dashboard",
+            index: 1,
+        },
+        {
+            label: "Units",
+            href: "/dashboard/units",
+            index: 2,
+        },
+        {
+            label: "Tenants",
+            href: "/dashboard/tenants",
+            index: 3,
+        },
+        {
+            label: "Statements",
+            href: "/dashboard/invoices",
+            index: 4,
+        },
+        {
+            label: "Payments",
+            href: "/dashboard/payments",
+            index: 5,
+        },
+        {
+            label: "Settings",
+            href: "/dashboard/settings",
+            index: 6,
+        },
+    ]
 };

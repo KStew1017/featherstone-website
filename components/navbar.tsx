@@ -31,7 +31,7 @@ export const Navbar = () => {
     const { scrollYProgress } = useScroll();
 
     useMotionValueEvent(scrollYProgress, "change", (latest) => {
-        setIsScrolled(latest > 0 ? "bg-grey/75 backdrop-filter" : "bg-grey/100");
+        setIsScrolled(latest > 0 ? "bg-grey/75 backdrop-blur-md" : "bg-grey/100");
     });
 
     return (
@@ -80,7 +80,7 @@ export const Navbar = () => {
                     className="hidden sm:flex basis-1/5 sm:basis-full"
                     justify="end"
                 >
-                    <ul className="hidden lg:flex gap-[65px] ml-2 items-center">
+                    <div className="hidden lg:flex gap-[65px] ml-2 items-center">
                         {siteConfig.navItems.map((item) => (
                             <NavbarItem
                                 key={item.href}
@@ -97,14 +97,31 @@ export const Navbar = () => {
                         <NavbarItem
                             key={"user"}
                             isActive={false}
+                            className="hover:drop-shadow-none"
                         >
-                            <UserButton afterSignOutUrl="/" />
+                            <div className="transition ease-s-curve hover:drop-shadow-light">
+                                <UserButton
+                                    afterSignOutUrl="/"
+                                    appearance={{
+                                        elements: {
+                                            userButtonTrigger:
+                                                "focus:shadow-none",
+                                            userButtonAvatarBox:
+                                                "w-[50px] h-[50px] rounded-full border-2 border-gold transition ease-s-curve ",
+                                        }
+                                    }}
+                                />
+                            </div>
                         </NavbarItem>
-                    </ul>
+                    </div>
+                </NavbarContent>
+
+                <NavbarContent className="lg:hidden absolute left-[5%]">
+                    <NavbarMenuToggle aria-label={isMenuOpen ? "Close menu" : "Open menu"} />
                 </NavbarContent>
 
                 <NavbarContent className="lg:hidden absolute right-[5%]">
-                    <NavbarMenuToggle aria-label={isMenuOpen ? "Close menu" : "Open menu"} />
+                    <UserButton afterSignOutUrl="/" />
                 </NavbarContent>
 
                 <NavbarMenu className="bg-grey">

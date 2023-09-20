@@ -6,6 +6,7 @@ import { jost, ptserif, northwell, northwellSwash } from "@/utils/fonts";
 import { ClerkProvider } from "@clerk/nextjs";
 
 
+
 export const metadata: Metadata = {
     title: {
         default: "Featherstone - Login",

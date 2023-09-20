@@ -28,13 +28,15 @@ const LoginPage = () => {
                         "text-[10px] lg:text-[16px] font-sans text-black hover:text-black focus:text-black focus:ring-0",
                     formButtonPrimary:
                         "bg-green-100 font-sans tracking-[2px] hover:bg-green-200 text-[10px] lg:text-[14px] p-5",
-                    identityPreviewEditButton:
-                        "text-[10px] lg:text-[14px] font-sans",
+                    identityPreviewEditButtonIcon:
+                        "text-gold",
+                    formFieldAction__password:
+                        "text-green-100 font-sans tracking-[2px] hover:text-gold text-[10px] lg:text-[14px]",
                     footer:
                         "hidden"
                 }
             }}
-            afterSignInUrl={"/units"}
+            afterSignInUrl={"/dashboard"}
         />
     );
 }

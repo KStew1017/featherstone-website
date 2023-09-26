@@ -39,6 +39,7 @@ module.exports = {
                         subtle: "#f3f4f6", // gray-100
                         DEFAULT: "#ffffff", // white
                         emphasis: "#374151", // gray-700
+                        tan300: "#D3D4CD", // custom
                     },
                     border: {
                         DEFAULT: "#e5e7eb", // gray-200
@@ -68,6 +69,7 @@ module.exports = {
                         subtle: "#1f2937", // gray-800
                         DEFAULT: "#111827", // gray-900
                         emphasis: "#d1d5db", // gray-300
+                        tan300: "#D3D4CD", // custom
                     },
                     border: {
                         DEFAULT: "#1f2937", // gray-800
@@ -101,8 +103,10 @@ module.exports = {
                 "dark-tremor-dropdown": "0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)",
             },
             borderRadius: {
+                "tremor-none": "0px",
                 "tremor-small": "0.375rem",
                 "tremor-default": "0.5rem",
+                "tremor-medium": "25px",
                 "tremor-large": "50px",
                 "tremor-full": "9999px",
             },

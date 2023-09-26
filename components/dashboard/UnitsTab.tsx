@@ -51,7 +51,7 @@ const UnitsTab = ({ units }: { units: Unit[] }) => {
                 </TableHead>
                 <TableBody className="">
                     {units.map((item) => (
-                        <TableRow key={item.id}>
+                        <TableRow key={item.id} id={`unit-${item.id}`} className="">
                             <TableCell className="text-center p-[8px]">
                                 <div className="m-[10px] text-[16px] rounded-xl">
                                     {item.id}
@@ -88,7 +88,7 @@ const UnitsTab = ({ units }: { units: Unit[] }) => {
                                 </div>
                             </TableCell>
                             <TableCell className="text-center p-[8px]">
-                                <div className="inline-block m-[10px] text-[16px] bg-tan-300 font-bold py-[10px] px-[20px] rounded-xl hover:drop-shadow-lg hover:scale-105 hover:translate-y-[-2px] hover:cursor-pointer transition ease-s-curve">
+                                <div className="m-[10px] text-[16px] rounded-xl">
                                     {item.tenant_id}
                                 </div>
                             </TableCell>

@@ -33,6 +33,9 @@
     "@nextui-org/switch": "^0.0.0-dev-v2-20230714000855",
     "@nextui-org/system": "^0.0.0-dev-v2-20230714000855",
     "@nextui-org/theme": "^0.0.0-dev-v2-20230714000855",
+    "@pdfme/common": "^2.2.0",
+    "@pdfme/generator": "^2.2.0",
+    "@pdfme/ui": "^2.2.0",
     "@prisma/client": "^5.1.1",
     "@react-aria/ssr": "^3.6.0",
     "@react-aria/visually-hidden": "^3.8.1",
@@ -47,9 +50,11 @@
     "clsx": "^1.2.1",
     "eslint": "8.41.0",
     "eslint-config-next": "13.4.4",
+    "file-saver": "^2.0.5",
     "formik": "^2.4.2",
     "framer-motion": "^10.12.16",
     "intl-messageformat": "^10.1.0",
+    "jszip": "^3.10.1",
     "lodash": "^4.17.21",
     "next": "^13.4.12",
     "next-themes": "^0.2.1",
@@ -64,6 +69,7 @@
     "typescript": "5.0.4"
   },
   "devDependencies": {
+    "@types/file-saver": "^2.0.5",
     "@types/react-scroll": "^1.8.7",
     "prisma": "^5.1.1"
   }

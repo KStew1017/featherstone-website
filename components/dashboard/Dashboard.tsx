@@ -13,14 +13,21 @@ import { UserButton } from "@clerk/nextjs";
 import { useUser } from "@clerk/nextjs";
 import { ReactNode } from "react";
 import { Unit, Tenant } from "@/types";
+import { generatePDF } from "@/utils/generatePDF";
 
 import UnitsTab from "./UnitsTab";
 import TenantsTab from "./TenantsTab";
+import StatementsTab from "./StatementsTab";
+
 
 
 const Dashboard = ({ units, tenants }: { units: Unit[], tenants: Tenant[] }) => {
     const { user } = useUser();
     const admin = user?.publicMetadata.role;
+
+    const callGeneratePDF = () => {
+        generatePDF(units);
+    };
 
     return (
         <main className="p-12">
@@ -69,6 +76,7 @@ const Dashboard = ({ units, tenants }: { units: Unit[], tenants: Tenant[] }) => 
                             <Tab
                                 className={`text-grey ui-not-selected:text-[20px] ui-selected:text-[20px] font-sans font-bold hover:border-gold hover:text-gold ui-selected:text-gold ui-selected:border-gold ui-selected:border-b-3 transition ease-s-curve duration-1000`}
                                 key={item.label}
+                                id={item.label}
                             >
                                 {item.label}
                             </Tab>
@@ -84,10 +92,13 @@ const Dashboard = ({ units, tenants }: { units: Unit[], tenants: Tenant[] }) => 
                     <TabPanel>
                         <TenantsTab tenants={tenants} />
                     </TabPanel>
+                    <TabPanel>
+                        <StatementsTab tenants={tenants} />
+                    </TabPanel>
                 </TabPanels>
             </TabGroup>
         </main>
-      );
+    );
 };
 
 export default Dashboard;

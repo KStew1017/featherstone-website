@@ -30,7 +30,7 @@ const TenantsTab = ({ tenants }: { tenants: Tenant[] }) => {
                 <TableBody>
                     {tenants.map((item) => (
                         <TableRow key={item.id}>
-                            <TableCell className="text-center p-[8px]">
+                            <TableCell className="text-center p-[8px] font-bold">
                                 <div className="m-[10px] text-[16px] rounded-xl">
                                     {item.id}
                                 </div>
@@ -61,7 +61,7 @@ const TenantsTab = ({ tenants }: { tenants: Tenant[] }) => {
                                 </div>
                             </TableCell>
                             <TableCell className="text-center p-[8px]">
-                                <div className="inline-block m-[10px] text-[14px] bg-tan-300 font-bold py-[10px] px-[20px] rounded-xl hover:drop-shadow-lg hover:scale-105 hover:translate-y-[-2px] hover:cursor-pointer transition ease-s-curve">
+                                <div className="inline-block m-[10px] text-[14px] bg-tan-200 py-[10px] px-[20px] rounded-xl">
                                     {(item.unit[0].number).join(", ")}
                                 </div>
                             </TableCell>

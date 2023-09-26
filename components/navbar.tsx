@@ -100,17 +100,31 @@ export const Navbar = () => {
                             className="hover:drop-shadow-none"
                         >
                             <div className="transition ease-s-curve hover:drop-shadow-light">
-                                <UserButton
-                                    afterSignOutUrl="/"
-                                    appearance={{
-                                        elements: {
-                                            userButtonTrigger:
-                                                "focus:shadow-none",
-                                            userButtonAvatarBox:
-                                                "w-[50px] h-[50px] rounded-full border-2 border-gold transition ease-s-curve ",
-                                        }
-                                    }}
-                                />
+                            <UserButton
+                                afterSignOutUrl="/"
+                                appearance={{
+                                    elements: {
+                                        userButtonTrigger:
+                                            "focus:shadow-none",
+                                        userButtonAvatarBox:
+                                            "w-[50px] h-[50px] rounded-full border-2 border-gold transition ease-s-curve hover:drop-shadow-lg hover:scale-105 hover:translate-y-[-2px]",
+                                        userButtonPopoverCard:
+                                            "bg-tan-100 border-2 border-gold font-sans",
+                                        userPreviewMainIdentifier:
+                                            "text-grey text-[18px] font-bold",
+                                        userPreviewSecondaryIdentifier:
+                                            "text-grey/50",
+                                        userButtonPopoverActionButton:
+                                            "hover:bg-tan-200",
+                                        userButtonPopoverActionButtonText:
+                                            "text-[16px]",
+                                        userButtonPopoverActionButtonIcon:
+                                            "w-[20px] h-[20px]",
+                                        userButtonPopoverFooter:
+                                            "hidden"
+                                    }
+                                }}
+                            />
                             </div>
                         </NavbarItem>
                     </div>

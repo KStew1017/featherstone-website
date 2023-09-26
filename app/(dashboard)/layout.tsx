@@ -8,7 +8,7 @@ import { ClerkProvider } from "@clerk/nextjs";
 
 export const metadata: Metadata = {
     title: {
-        default: "Featherstone - Login",
+        default: "Featherstone - Dashboard",
         template: `%s - ${siteConfig.name}`,
     },
     description: siteConfig.description,
@@ -27,7 +27,7 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
                 <body className="bg-tan-100">
                     <Providers>
                         <div className="relative flex flex-col h-screen items-center">
-                            <div className="w-[90%] lg:max-w-[1250px]">
+                            <div className="w-[90%] lg:max-w-[90%]">
                                 {children}
                             </div>
                         </div>

@@ -4,10 +4,10 @@ const nextConfig = {
     compiler: {
         styledComponents: true
     },
-    // distDir: "build",
-    // images: {
-    //     unoptimized: true
-    // },
+    distDir: "build",
+    images: {
+        unoptimized: true
+    },
 }
 
 module.exports = nextConfig

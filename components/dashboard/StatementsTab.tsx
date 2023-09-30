@@ -162,12 +162,11 @@ const StatementsTab = ({ tenants }: { tenants: Tenant[] }) => {
                             </TableCell>
                             {Object.entries(tenantItemText[item.id] || {}).map(([key, value]) => {
                                 return (
-                                    <TableCell className="text-center p-[8px]">
+                                    <TableCell key={`${item.id}-${key}`} className="text-center p-[8px]">
                                         <div className="m-[10px] text-[16px] rounded-xl">
                                             <TextInput
                                                 placeholder=""
                                                 name={`${key}`}
-                                                defaultValue={value}
                                                 value={tenantItemText[item.id]?.[key]}
                                                 onChange={handleChangeText(item.id)}
                                                 className="rounded-t-tremor-medium rounded-b-tremor-none"
@@ -175,7 +174,6 @@ const StatementsTab = ({ tenants }: { tenants: Tenant[] }) => {
                                             <NumberInput
                                                 placeholder=""
                                                 name={`${key}Amount`}
-                                                defaultValue={key === "item2" ? 50 : 0}
                                                 value={tenantItemAmounts[item.id]?.[`${key}Amount`]}
                                                 onChange={handleChangeAmount(item.id)}
                                                 className="rounded-t-tremor-none rounded-b-tremor-medium"
@@ -184,116 +182,6 @@ const StatementsTab = ({ tenants }: { tenants: Tenant[] }) => {
                                     </TableCell>
                                 )
                             })}
-                            {/* <TableCell className="text-center p-[8px]">
-                                <div className="m-[10px] text-[16px] rounded-xl">
-                                    <TextInput
-                                        placeholder=""
-                                        name="item1Text"
-                                        defaultValue={`Lease on Suite ${(JSON.stringify(item.unit[0].number.join(", "))).replaceAll('"', '')}`}
-                                        value={tenantItemText[item.id]?.item1Text || ''}
-                                        onChange={handleChangeText(item.id)}
-                                        className="rounded-t-tremor-medium rounded-b-tremor-none"
-                                    />
-                                    <NumberInput 
-                                        placeholder="" 
-                                        name="item1Amount" 
-                                        defaultValue={0}
-                                        value={tenantItemAmounts[item.id]?.item1Amount || 0} 
-                                        onChange={handleChangeAmount(item.id)}
-                                        className="rounded-t-tremor-none rounded-b-tremor-medium"
-                                    />
-                                </div>
-                            </TableCell>
-                            <TableCell className="text-center p-[8px]">
-                                <div className="m-[10px] text-[16px] rounded-xl">
-                                    <TextInput
-                                        placeholder=""
-                                        name="item2Text"
-                                        defaultValue="Maintenance Fee"
-                                        value={tenantItemText[item.id]?.item2Text || ''}
-                                        onChange={handleChangeText(item.id)}
-                                    />
-                                    <NumberInput 
-                                        placeholder="" 
-                                        name="item2Amount" 
-                                        value={tenantItemAmounts[item.id]?.item2Amount || 0} 
-                                        defaultValue={50}
-                                        onChange={handleChangeAmount(item.id)} 
-                                    />
-                                </div>
-                            </TableCell>
-                            <TableCell className="text-center p-[8px]">
-                                <div className="m-[10px] text-[16px] rounded-xl">
-                                    <TextInput
-                                        placeholder=""
-                                        name="item3Text"
-                                        defaultValue=""
-                                        value={tenantItemText[item.id]?.item3Text || ''}
-                                        onChange={handleChangeText(item.id)}
-                                    />
-                                    <NumberInput 
-                                        placeholder="" 
-                                        name="item3Amount" 
-                                        defaultValue={0}
-                                        value={tenantItemAmounts[item.id]?.item3Amount || 0} 
-                                        onChange={handleChangeAmount(item.id)} 
-                                    />
-                                </div>
-                            </TableCell>
-                            <TableCell className="text-center p-[8px]">
-                                <div className="m-[10px] text-[16px] rounded-xl">
-                                    <TextInput
-                                        placeholder=""
-                                        name="item4Text"
-                                        defaultValue=""
-                                        value={tenantItemText[item.id]?.item4Text || ''}
-                                        onChange={handleChangeText(item.id)}
-                                    />
-                                    <NumberInput 
-                                        placeholder="" 
-                                        name="item4Amount" 
-                                        defaultValue={0}
-                                        value={tenantItemAmounts[item.id]?.item5Amount || 0} 
-                                        onChange={handleChangeAmount(item.id)} 
-                                    />
-                                </div>
-                            </TableCell>
-                            <TableCell className="text-center p-[8px]">
-                                <div className="m-[10px] text-[16px] rounded-xl">
-                                    <TextInput
-                                        placeholder=""
-                                        name="item5Text"
-                                        defaultValue=""
-                                        value={tenantItemText[item.id]?.item5Text || ''}
-                                        onChange={handleChangeText(item.id)}
-                                    />
-                                    <NumberInput 
-                                        placeholder="" 
-                                        name="item5Amount" 
-                                        defaultValue={0}
-                                        value={tenantItemAmounts[item.id]?.item5Amount || 0} 
-                                        onChange={handleChangeAmount(item.id)} 
-                                    />
-                                </div>
-                            </TableCell>
-                            <TableCell className="text-center p-[8px]">
-                                <div className="m-[10px] text-[16px] rounded-xl">
-                                    <TextInput
-                                        placeholder=""
-                                        name="item6Text"
-                                        defaultValue=""
-                                        value={tenantItemText[item.id]?.item6Text || ''}
-                                        onChange={handleChangeText(item.id)}
-                                    />
-                                    <NumberInput 
-                                        placeholder="" 
-                                        name="item6Amount" 
-                                        defaultValue={0}
-                                        value={tenantItemAmounts[item.id]?.item6Amount || 0} 
-                                        onChange={handleChangeAmount(item.id)} 
-                                    />
-                                </div>
-                            </TableCell> */}
                             <TableCell className="text-center p-[8px]">
                                 <div className="inline-block text-[14px] bg-tan-200 rounded-xl">
                                     {totalAmount(item.id)}

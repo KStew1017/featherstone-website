@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
     return (
-        <ClerkProvider>
+        <ClerkProvider publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}>
             <html lang="en" className={`${jost.variable} ${ptserif.variable} ${northwell.variable} ${northwellSwash.variable} font-sans bg-tan-100 selection:text-tan-100 selection:bg-gold/75 scroll-smooth`}>
                 <head />
                 <body>

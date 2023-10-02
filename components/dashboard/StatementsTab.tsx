@@ -21,7 +21,6 @@ import { Text } from "@chakra-ui/react";
 import { generatePDF } from "@/utils/generatePDF";
 
 
-
 const generateDefaultTenantItemAmounts = (tenants: Tenant[]) => {
     const defaultTenantItemAmounts: { [key: string]: { [key: string]: number } } = {};
     tenants.forEach(tenant => {

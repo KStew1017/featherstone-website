@@ -11,10 +11,7 @@ import { BrandDark } from "@/components/icons";
 import { siteConfig } from "@/config/site";
 import { UserButton } from "@clerk/nextjs";
 import { useUser } from "@clerk/nextjs";
-import { ReactNode } from "react";
 import { Unit, Tenant } from "@/types";
-import { generatePDF } from "@/utils/generatePDF";
-
 import UnitsTab from "./UnitsTab";
 import TenantsTab from "./TenantsTab";
 import StatementsTab from "./StatementsTab";
@@ -23,11 +20,7 @@ import StatementsTab from "./StatementsTab";
 
 const Dashboard = ({ units, tenants }: { units: Unit[], tenants: Tenant[] }) => {
     const { user } = useUser();
-    const admin = user?.publicMetadata.role;
-
-    const callGeneratePDF = () => {
-        generatePDF(units);
-    };
+    const role = user?.publicMetadata.role as string;
 
     return (
         <main className="p-12">
@@ -39,7 +32,7 @@ const Dashboard = ({ units, tenants }: { units: Unit[], tenants: Tenant[] }) => 
                             <span className="text-[12px] text-grey/50 mr-2">signed in as </span>{user?.username}
                         </p>
                         <p className="text-grey/50 text-[12px] mr-4 font-sans font-bold text-end">
-                            ({admin as ReactNode})
+                            ({role})
                         </p>
                     </div>
                     <UserButton

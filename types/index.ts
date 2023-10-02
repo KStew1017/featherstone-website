@@ -17,5 +17,8 @@ export type Tenant = {
     email: string | null;
     phone: string | null;
     business_name: string | null;
+    lease_amount: number | null;
+    maintenance_fee: number | null;
+    parking_fee: number | null;
     unit: Unit[];
 }

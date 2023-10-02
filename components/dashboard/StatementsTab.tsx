@@ -21,41 +21,42 @@ import { Text } from "@chakra-ui/react";
 import { generatePDF } from "@/utils/generatePDF";
 
 
-const generateDefaultTenantItemAmounts = (tenants: Tenant[]) => {
-    const defaultTenantItemAmounts: { [key: string]: { [key: string]: number } } = {};
-    tenants.forEach(tenant => {
-        defaultTenantItemAmounts[tenant.id] = {
-            item1Amount: 0,
-            item2Amount: 50,
-            item3Amount: 0,
-            item4Amount: 0,
-            item5Amount: 0,
-            item6Amount: 0,
-        };
-    });
-    return defaultTenantItemAmounts;
-};
-
-const generateDefaultTenantItemText = (tenants: Tenant[]) => {
-    const defaultTenantItemText: { [key: string]: { [key: string]: string } } = {};
-    tenants.forEach(tenant => {
-        defaultTenantItemText[tenant.id] = {
-            item1: `Lease on Suite ${(JSON.stringify(tenant.unit[0].number.join(", "))).replaceAll('"', '')}`,
-            item2: "Maintenance Fee",
-            item3: "",
-            item4: "",
-            item5: "",
-            item6: "",
-        };
-    });
-    return defaultTenantItemText;
-};
 
 const StatementsTab = ({ tenants }: { tenants: Tenant[] }) => {
+    const generateDefaultTenantItemAmounts = (tenants: Tenant[]) => {
+        const defaultTenantItemAmounts: { [key: string]: { [key: string]: number | null | undefined } } = {};
+        tenants.forEach(tenant => {
+            defaultTenantItemAmounts[tenant.id] = {
+                item1Amount: tenant.lease_amount === null ? 0 : tenant.lease_amount,
+                item2Amount: tenant.maintenance_fee === null ? 0 : tenant.maintenance_fee,
+                item3Amount: tenant.parking_fee === 0 ? 0 : tenant.parking_fee,
+                item4Amount: 0,
+                item5Amount: 0,
+                item6Amount: 0,
+            };
+        });
+        return defaultTenantItemAmounts;
+    };
+    
+    const generateDefaultTenantItemText = (tenants: Tenant[]) => {
+        const defaultTenantItemText: { [key: string]: { [key: string]: string } } = {};
+        tenants.forEach(tenant => {
+            defaultTenantItemText[tenant.id] = {
+                item1: `Lease on Suite ${(JSON.stringify(tenant.unit[0].number.join(", "))).replaceAll('"', '')}`,
+                item2: "Maintenance Fee",
+                item3: tenant.parking_fee ? "Parking Fee" : "",
+                item4: "",
+                item5: "",
+                item6: "",
+            };
+        });
+        return defaultTenantItemText;
+    };
+
     const [date, setDate] = useState<DatePickerValue>(new Date());
     const [selectedMonth, setSelectedMonth] = useState<string>("");
     const [tenantItemText, setTenantItemText] = useState<{ [key: string]: { [key: string]: string } }>(generateDefaultTenantItemText(tenants));
-    const [tenantItemAmounts, setTenantItemAmounts] = useState<{ [key: string]: { [key: string]: number } }>(generateDefaultTenantItemAmounts(tenants));
+    const [tenantItemAmounts, setTenantItemAmounts] = useState<{ [key: string]: { [key: string]: number | null | undefined } }>(generateDefaultTenantItemAmounts(tenants));
 
     const months = [
         "January",
@@ -98,9 +99,10 @@ const StatementsTab = ({ tenants }: { tenants: Tenant[] }) => {
 
     // calculate total amount for each tenant
     const totalAmount = (tenantId: number) => {
-        let total = Object.values(tenantItemAmounts[`${tenantId}`] || {}).reduce((sum, amount) => sum + amount, 0);
+        let total = Object.values(tenantItemAmounts[`${tenantId}`] || {}).reduce((sum, amount) => (sum ?? 0) + (amount ?? 0), 0);
         return total;
     }
+
 
     // generate array of total amounts for each tenant
     const getTotalAmounts = tenants.map(tenant => totalAmount(tenant.id));
@@ -153,6 +155,7 @@ const StatementsTab = ({ tenants }: { tenants: Tenant[] }) => {
                 </TableHead>
                 <TableBody>
                     {tenants.map((item) => (
+                        console.log(tenants[item.id - 1]),
                         <TableRow key={item.id}>
                             <TableCell className="text-left p-[8px]">
                                 <div className="m-[10px] text-[16px] rounded-xl rounded-">
@@ -173,7 +176,7 @@ const StatementsTab = ({ tenants }: { tenants: Tenant[] }) => {
                                             <NumberInput
                                                 placeholder=""
                                                 name={`${key}Amount`}
-                                                value={tenantItemAmounts[item.id]?.[`${key}Amount`]}
+                                                value={tenantItemAmounts[item.id]?.[`${key}Amount`] ?? 0}
                                                 onChange={handleChangeAmount(item.id)}
                                                 className="rounded-t-tremor-none rounded-b-tremor-medium"
                                             />

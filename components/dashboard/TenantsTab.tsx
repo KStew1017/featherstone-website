@@ -21,7 +21,6 @@ const TenantsTab = ({ tenants }: { tenants: Tenant[] }) => {
                         <TableHeaderCell className="text-center">ID</TableHeaderCell>
                         <TableHeaderCell className="text-center">First Name</TableHeaderCell>
                         <TableHeaderCell className="text-center">Last Name</TableHeaderCell>
-                        <TableHeaderCell className="text-center">Email</TableHeaderCell>
                         <TableHeaderCell className="text-center">Phone</TableHeaderCell>
                         <TableHeaderCell className="text-center">Bussiness Name</TableHeaderCell>
                         <TableHeaderCell className="text-center">Unit</TableHeaderCell>
@@ -43,11 +42,6 @@ const TenantsTab = ({ tenants }: { tenants: Tenant[] }) => {
                             <TableCell className="text-center p-[8px]">
                                 <div className="m-[10px] text-[16px] rounded-xl">
                                     {item.last_name}
-                                </div>
-                            </TableCell>
-                            <TableCell className="text-center p-[8px]">
-                                <div className="m-[10px] text-[16px] rounded-xl">
-                                    {item.email}
                                 </div>
                             </TableCell>
                             <TableCell className="text-center p-[8px]">

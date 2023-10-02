@@ -15,6 +15,7 @@ import { Unit, Tenant } from "@/types";
 import UnitsTab from "./UnitsTab";
 import TenantsTab from "./TenantsTab";
 import StatementsTab from "./StatementsTab";
+import PaymentsTab from "./PaymentsTab";
 
 
 
@@ -87,6 +88,9 @@ const Dashboard = ({ units, tenants }: { units: Unit[], tenants: Tenant[] }) => 
                     </TabPanel>
                     <TabPanel>
                         <StatementsTab tenants={tenants} />
+                    </TabPanel>
+                    <TabPanel>
+                        <PaymentsTab tenants={tenants} />
                     </TabPanel>
                 </TabPanels>
             </TabGroup>

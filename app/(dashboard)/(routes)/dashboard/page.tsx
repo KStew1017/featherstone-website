@@ -29,9 +29,17 @@ const DashboardPage = async () => {
         ],
     }))
 
+    const responses = (await prisma.contact.findMany({
+        orderBy: [
+            {
+                id: "asc",
+            },
+        ],
+    }))
+
     return (
         <>
-            <Dashboard units={units} tenants={tenants} />
+            <Dashboard units={units} tenants={tenants} responses={responses} />
         </>
     );
 };

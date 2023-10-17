@@ -1,3 +1,6 @@
+import { DateTime } from "luxon";
+
+
 export type Unit = {
     id: number;
     number: number[];
@@ -21,4 +24,12 @@ export type Tenant = {
     maintenance_fee: number | null;
     parking_fee: number | null;
     unit: Unit[];
+}
+
+export type Contact = {
+    id: number;
+    name: string;
+    phone: string;
+    message: string;
+    date: any;
 }

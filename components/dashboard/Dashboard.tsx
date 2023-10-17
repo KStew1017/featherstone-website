@@ -11,15 +11,15 @@ import { BrandDark } from "@/components/icons";
 import { siteConfig } from "@/config/site";
 import { UserButton } from "@clerk/nextjs";
 import { useUser } from "@clerk/nextjs";
-import { Unit, Tenant } from "@/types";
+import { Unit, Tenant, Contact } from "@/types";
 import UnitsTab from "./UnitsTab";
 import TenantsTab from "./TenantsTab";
 import StatementsTab from "./StatementsTab";
-import PaymentsTab from "./PaymentsTab";
+import ResponseTab from "./ResponsesTab";
 
 
 
-const Dashboard = ({ units, tenants }: { units: Unit[], tenants: Tenant[] }) => {
+const Dashboard = ({ units, tenants, responses }: { units: Unit[], tenants: Tenant[], responses: Contact[] }) => {
     const { user } = useUser();
     const role = user?.publicMetadata.role as string;
 
@@ -79,8 +79,6 @@ const Dashboard = ({ units, tenants }: { units: Unit[], tenants: Tenant[] }) => 
                 </TabList>
                 <TabPanels>
                     <TabPanel>
-                    </TabPanel>
-                    <TabPanel>
                         <UnitsTab units={units} />
                     </TabPanel>
                     <TabPanel>
@@ -90,7 +88,7 @@ const Dashboard = ({ units, tenants }: { units: Unit[], tenants: Tenant[] }) => 
                         <StatementsTab tenants={tenants} />
                     </TabPanel>
                     <TabPanel>
-                        <PaymentsTab tenants={tenants} />
+                        <ResponseTab responses={responses} />
                     </TabPanel>
                 </TabPanels>
             </TabGroup>

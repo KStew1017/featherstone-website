@@ -44,34 +44,24 @@ export const siteConfig = {
     ],
     dashboardNavItems: [
         {
-            label: "Overview",
-            href: "/dashboard",
-            index: 1,
-        },
-        {
             label: "Units",
             href: "/dashboard/units",
-            index: 2,
+            index: 1,
         },
         {
             label: "Tenants",
             href: "/dashboard/tenants",
-            index: 3,
+            index: 2,
         },
         {
             label: "Statements",
             href: "/dashboard/invoices",
+            index: 3,
+        },
+        {
+            label: "Contact Form Responses",
+            href: "/dashboard/responses",
             index: 4,
-        },
-        {
-            label: "Payments",
-            href: "/dashboard/payments",
-            index: 5,
-        },
-        {
-            label: "Settings",
-            href: "/dashboard/settings",
-            index: 6,
         },
     ]
 };

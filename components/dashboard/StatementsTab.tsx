@@ -21,7 +21,6 @@ import { Text } from "@chakra-ui/react";
 import { generatePDF } from "@/utils/generatePDF";
 
 
-
 const StatementsTab = ({ tenants }: { tenants: Tenant[] }) => {
     const generateDefaultTenantItemAmounts = (tenants: Tenant[]) => {
         const defaultTenantItemAmounts: { [key: string]: { [key: string]: number | null | undefined } } = {};
@@ -155,7 +154,6 @@ const StatementsTab = ({ tenants }: { tenants: Tenant[] }) => {
                 </TableHead>
                 <TableBody>
                     {tenants.map((item) => (
-                        console.log(tenants[item.id - 1]),
                         <TableRow key={item.id}>
                             <TableCell className="text-left p-[8px]">
                                 <div className="m-[10px] text-[16px] rounded-xl rounded-">

@@ -11,7 +11,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
                 message
             }
         });
-        console.log(contact);
+        // console.log(contact);
         return NextResponse.json({ status: "success", data: contact });
     } catch (error) {
         console.log(error);

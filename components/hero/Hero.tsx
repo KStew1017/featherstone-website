@@ -23,13 +23,13 @@ const Hero: FC<Props> = ({ title }) => {
 
     return (
         <section className={`flex flex-col h-screen relative overflow-hidden`}>
-            <motion.div className="absolute inset-0 bg-[url(../public/temp-hero.jpg)] bg-center bg-cover bg-blend-overlay bg-black/20" style={{ y, scale }} />
+            <motion.div className="absolute inset-0 bg-[url(../public/hero.jpg)] bg-center bg-cover bg-blend-overlay bg-black/20" style={{ y, scale }} />
             <div className="flex-1 flex items-center p-0">
-                <div className={`${isLocationPageWidth} text-center mx-auto`}>
+                {/* <div className={`${isLocationPageWidth} text-center mx-auto`}>
                     <Reveal hiddenVariant="hiddenY" visibleVariant="visibleY">
-                        <h1 className={`font-serif text-[36px] sm:text-[75px] md:text-[100px] text-tan-100 drop-shadow-xl font-bold text-light ${isLocationPageMargin}`}>{title}</h1>
+                        <h1 className={`font-serif text-[36px] sm:text-[75px] md:text-[100px] text-tan-100 drop-shadow-md font-bold text-light bg-black/50 ${isLocationPageMargin}`}>{title}</h1>
                     </Reveal>
-                </div>
+                </div> */}
             </div>
             <>{isHomePage}</>
         </section>

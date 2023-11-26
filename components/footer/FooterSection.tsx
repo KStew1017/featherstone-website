@@ -13,7 +13,7 @@ const Footer = ({ units, styling }: { units?: any, styling?: string}) => {
     return (
         <section className={`flex items-center bg-grey h-fit py-[25px] ${unitsAvailable} ${styling}`}>
             <div className="grid max-w-[90%] mx-auto">
-                <div className="grid grid-cols-11 h-full ">
+                <div className="grid grid-cols-11 h-full">
                     <FooterCard
                         header={<BrandTan />}
                         content1={<FooterCardContent.BrandContent1 />}

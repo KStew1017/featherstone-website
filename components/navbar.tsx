@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import {
     Navbar as NextUINavbar,
@@ -15,11 +15,10 @@ import { useRouter, usePathname } from "next/navigation";
 import React from "react";
 import Link from "next/link";
 import { motion, useScroll } from "framer-motion";
-import '../styles/style.css'
+import "../styles/style.css";
 import { useState } from "react";
 import { useMotionValueEvent } from "framer-motion";
 import { UserButton } from "@clerk/nextjs";
-
 
 export const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -57,19 +56,34 @@ export const Navbar = () => {
                         "data-[active=true]:after:rounded-t-[5px]",
                         "data-[active=true]:after:bg-tan-100",
                         "data-[active=true]:after:drop-shadow-light",
-                    ]
+                    ],
                 }}
             >
-                <NavbarContent className="basis-full min-[0px]:max-lg:hidden" justify="start">
-                    <NavbarBrand as="li" className="max-w-fit">
-                        <Link className="flex justify-start items-center hover:drop-shadow-light transition ease-s-curve " href="/">
+                <NavbarContent
+                    className="basis-full min-[0px]:max-lg:hidden"
+                    justify="start"
+                >
+                    <NavbarBrand
+                        as="li"
+                        className="max-w-fit"
+                    >
+                        <Link
+                            className="flex justify-start items-center hover:drop-shadow-light transition ease-s-curve "
+                            href="/"
+                        >
                             <Brand />
                         </Link>
                     </NavbarBrand>
                 </NavbarContent>
 
-                <NavbarContent className="flex basis-full lg:hidden" justify="center">
-                    <NavbarBrand as="li" className="max-w-[70%] h-[80%] justify-center">
+                <NavbarContent
+                    className="flex basis-full lg:hidden"
+                    justify="center"
+                >
+                    <NavbarBrand
+                        as="li"
+                        className="max-w-[70%] h-[80%] justify-center"
+                    >
                         <Link href="/">
                             <Brand />
                         </Link>
@@ -88,7 +102,13 @@ export const Navbar = () => {
                             >
                                 <Link
                                     className="text-tan-100 text-[20px] hover:drop-shadow-light transition ease-s-curve font-serif font-bold"
-                                    href={item.href === '#contact' ? '/#contact' : item.href === '#location' ? '/#location' : item.href}
+                                    href={
+                                        item.href === "#contact"
+                                            ? "/#contact"
+                                            : item.href === "#location"
+                                            ? "/#location"
+                                            : item.href
+                                    }
                                 >
                                     {item.label}
                                 </Link>
@@ -100,31 +120,23 @@ export const Navbar = () => {
                             className="hover:drop-shadow-none"
                         >
                             <div className="transition ease-s-curve hover:drop-shadow-light">
-                            <UserButton
-                                afterSignOutUrl="/"
-                                appearance={{
-                                    elements: {
-                                        userButtonTrigger:
-                                            "focus:shadow-none",
-                                        userButtonAvatarBox:
-                                            "w-[50px] h-[50px] rounded-full border-2 border-gold transition ease-s-curve hover:drop-shadow-lg hover:scale-105 hover:translate-y-[-2px]",
-                                        userButtonPopoverCard:
-                                            "bg-tan-100 border-2 border-gold font-sans",
-                                        userPreviewMainIdentifier:
-                                            "text-grey text-[18px] font-bold",
-                                        userPreviewSecondaryIdentifier:
-                                            "text-grey/50",
-                                        userButtonPopoverActionButton:
-                                            "hover:bg-tan-200",
-                                        userButtonPopoverActionButtonText:
-                                            "text-[16px]",
-                                        userButtonPopoverActionButtonIcon:
-                                            "w-[20px] h-[20px]",
-                                        userButtonPopoverFooter:
-                                            "hidden"
-                                    }
-                                }}
-                            />
+                                <UserButton
+                                    afterSignOutUrl="/"
+                                    appearance={{
+                                        elements: {
+                                            userButtonTrigger: "focus:shadow-none",
+                                            userButtonAvatarBox:
+                                                "w-[50px] h-[50px] rounded-full border-2 border-gold transition ease-s-curve hover:drop-shadow-lg hover:scale-105 hover:translate-y-[-2px]",
+                                            userButtonPopoverCard: "bg-tan-100 border-2 border-gold font-sans",
+                                            userPreviewMainIdentifier: "text-grey text-[18px] font-bold",
+                                            userPreviewSecondaryIdentifier: "text-grey/50",
+                                            userButtonPopoverActionButton: "hover:bg-tan-200",
+                                            userButtonPopoverActionButtonText: "text-[16px]",
+                                            userButtonPopoverActionButtonIcon: "w-[20px] h-[20px]",
+                                            userButtonPopoverFooter: "hidden",
+                                        },
+                                    }}
+                                />
                             </div>
                         </NavbarItem>
                     </div>
@@ -160,4 +172,3 @@ export const Navbar = () => {
         </>
     );
 };
-

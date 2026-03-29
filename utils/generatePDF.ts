@@ -542,6 +542,12 @@ export const generatePDF = async (props: any) => {
     const zip = new JSZip();
 
     for (const tenant of tenants) { 
+
+        if (!tenant.first_name || !tenant.last_name) {
+            console.warn(`Skipping tenant with ID ${tenant.id} due to missing first name or last name.`);
+            continue;
+        }
+
         const month = date.toLocaleString('default', { month: 'long' });
         const day = date.getDate();
         const year = date.getFullYear();

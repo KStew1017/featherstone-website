@@ -543,7 +543,7 @@ export const generatePDF = async (props: any) => {
 
     for (const tenant of tenants) { 
 
-        if (!tenant.first_name || !tenant.last_name) {
+        if (!tenant.first_name || tenant.first_name === 0 || !tenant.last_name || tenant.last_name === 0) {
             console.warn(`Skipping tenant with ID ${tenant.id} due to missing first name or last name.`);
             continue;
         }

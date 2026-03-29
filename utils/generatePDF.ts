@@ -565,7 +565,14 @@ export const generatePDF = async (props: any) => {
         inputs[0].item6Amount = tenantItemAmounts[`${tenant.id}`].item6Amount === 0 ? "" : `$${tenantItemAmounts[`${tenant.id}`].item6Amount}.00`;
 
         const pdf = await generate({ template, inputs, options: { font } });
-        const filename = `${tenant.first_name.replace("/", "-")}-${tenant.last_name}-${selectedMonth}-Lease.pdf`;
+        let baseFilename = `${tenant.first_name.replace("/", "-")}-${tenant.last_name}-${selectedMonth}-Lease.pdf`;
+        let filename = baseFilename;
+        let counter = 2;
+
+        while (zip.file(filename)) {
+            filename = baseFilename.replace(/\.pdf$/, `-${counter}.pdf`);
+            counter++;
+        }
 
         zip.file(filename, pdf.buffer);
     }
